@@ -3,20 +3,13 @@ in the [Nvidia L4T Development Guide](https://docs.nvidia.com/jetson/l4t/index.h
 
 The scripts are currently hard-coded to use Jetson TX2 as the target
 
-# Downloading Packages
-
-Download from Jetson [https://developer.nvidia.com/embedded/linux-tegra-archive](archive page) and place in a "Downloads" directory.
-You will need:
-* Tegra186_Linux_R32.2.1_aarch64.tbz2
-* Tegra_Linux_Sample-Root-Filesystem_R32.2.1_aarch64.tbz2
-* secureboot_R32.2.1_aarch64.tbz2
-TODO: auto download these with a download script
-
-# Preparing for use
-Run 
+# Downloading Packages and preparing for use
+Run
 ```
-./preparing-for-use.sh
+./download-and-prepare-files.sh
 ```
+
+# Flashing stock image (optional)
 Put your device in recovery mode, then run
 ```
 ./flashing-and-booting.sh

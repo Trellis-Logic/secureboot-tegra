@@ -3,5 +3,4 @@
 set -e
 cd `dirname $0`
 SECUREBOOT_PACKAGE_NAME=secureboot_R32.2.1_aarch64.tbz2
-cd Linux_for_Tegra
-tar xvjf ../Downloads/${SECUREBOOT_PACKAGE_NAME}
+sudo tar xvjf Downloads/${SECUREBOOT_PACKAGE_NAME}

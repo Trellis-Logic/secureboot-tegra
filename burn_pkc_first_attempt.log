@@ -1,0 +1,245 @@
++ noburn=0
++ jtag_disable=yes
++ getopts c:d:i:jk:l:o:pr:s:D:H:S:X:-: OPTION
++ case $OPTION in
++ jtag_disable=no
++ getopts c:d:i:jk:l:o:pr:s:D:H:S:X:-: OPTION
++ case $OPTION in
++ tid=0x18
++ pkcopt+='-i 0x18 '
++ getopts c:d:i:jk:l:o:pr:s:D:H:S:X:-: OPTION
++ case $OPTION in
++ Ctype=PKC
++ pkcopt+='-f PKC '
++ getopts c:d:i:jk:l:o:pr:s:D:H:S:X:-: OPTION
++ case $OPTION in
++ set_productionmode=yes
++ getopts c:d:i:jk:l:o:pr:s:D:H:S:X:-: OPTION
++ case $OPTION in
++ KEYFILE=../rsa_priv.pem
++ getopts c:d:i:jk:l:o:pr:s:D:H:S:X:-: OPTION
++ '[' 0x18 = '' ']'
++ '[' 0x18 '!=' 0x40 -a 0x18 '!=' 0x21 -a 0x18 '!=' 0x18 -a 0x18 '!=' 0x19 ']'
++ shift 8
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/pkc/keyviadb ']'
++ '[' 0x18 = 0x18 -o 0x18 = 0x19 ']'
++ '[' 1 -ne 1 ']'
++ '[' 1 -eq 1 ']'
++ nargs=1
++ ext_target_board=jetson-tx2
++ '[' '!' -r jetson-tx2.conf ']'
++++ dirname ./odmfuse.sh
+++ cd .
+++ pwd
++ LDK_DIR=/home/dan/secureboot-tegra/Linux_for_Tegra
+++ readlink -f /home/dan/secureboot-tegra/Linux_for_Tegra
++ LDK_DIR=/home/dan/secureboot-tegra/Linux_for_Tegra
++ source jetson-tx2.conf
+++ BPFDTB_FILE=tegra186-a02-bpmp-quill-p3310-1000-a00-00-te770d-ucm2.dtb
+++ source /home/dan/secureboot-tegra/Linux_for_Tegra/p2771-0000.conf.common
++++ CHIPID=0x18
++++ EMMC_CFG=flash_l4t_t186.xml
++++ BOOTPARTSIZE=8388608
++++ EMMCSIZE=31276924928
++++ ITS_FILE=
++++ EMMC_BCT=P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg
++++ DTB_FILE=tegra186-quill-p3310-1000-a00-00-base.dtb
++++ TBCDTB_FILE=tegra186-quill-p3310-1000-a00-00-base.dtb
++++ '[' -z '' ']'
++++ USE_UBOOT=1
++++ ROOTFSSIZE=28GiB
++++ CMDLINE_ADD='console=ttyS0,115200n8 console=tty0 fbcon=map:0 net.ifnames=0'
++++ target_board=t186ref
++++ ROOT_DEV='mmcblk0p12 ------------ internal eMMC.
+        sda1 ----------------- external USB devices. (USB memory stick, HDD)
+        eth0 ----------------- nfsroot via RJ45 Ethernet port.
+        eth1 ----------------- nfsroot via USB Ethernet interface.'
++++ TEGRABOOT=bootloader/t186ref/nvtboot.bin
++++ WB0BOOT=bootloader/t186ref/warmboot.bin
++++ FLASHER=bootloader/nvtboot_recovery_cpu.bin
++++ BOOTLOADER=bootloader/nvtboot_cpu.bin
++++ INITRD=bootloader/l4t_initrd.img
++++ TBCFILE=bootloader/cboot.bin
++++ BPFFILE=bootloader/bpmp.bin
++++ TOSFILE=bootloader/tos.img
++++ EKSFILE=bootloader/eks.img
++++ MTSPREBOOT=bootloader/preboot_d15_prod_cr.bin
++++ MTS=bootloader/mce_mts_d15_prod_cr.bin
++++ MB1FILE=bootloader/mb1_prod.bin
++++ SOSFILE=bootloader/mb1_recovery_prod.bin
++++ MB2BLFILE=bootloader/nvtboot_recovery.bin
++++ BCT=--sdram_config
++++ BINSARGS='--bins "'
++++ DEV_PARAMS=emmc.cfg
++++ SCR_CONFIG=minimal_scr.cfg
++++ SCR_COLD_BOOT_CONFIG=mobile_scr.cfg
++++ MISC_CONFIG=tegra186-mb1-bct-misc-si-l4t.cfg
++++ PINMUX_CONFIG=tegra186-mb1-bct-pinmux-quill-p3310-1000-a00.cfg
++++ PMIC_CONFIG=tegra186-mb1-bct-pmic-quill-p3310-1000-a00.cfg
++++ PMC_CONFIG=tegra186-mb1-bct-pad-quill-p3310-1000-a00.cfg
++++ PROD_CONFIG=tegra186-mb1-bct-prod-quill-p3310-1000-a00.cfg
++++ BOOTROM_CONFIG=tegra186-mb1-bct-bootrom-quill-p3310-1000-a00.cfg
++++ DEFAULT_FAB=B01
++ BL_DIR=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader
++ TARGET_DIR=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref
++ KERNEL_DIR=/home/dan/secureboot-tegra/Linux_for_Tegra/kernel
++ DTB_DIR=/home/dan/secureboot-tegra/Linux_for_Tegra/kernel/dtb
++ '[' 0 -ne 1 ']'
++ get_fuse_level fuselevel hwchipid bootauth
++ local ECID
++ local rcmcmd
++ local inst_args=
++ local idval_1=
++ local idval_2=
++ local flval=
++ local baval=None
++ local flvar=fuselevel
++ local hivar=hwchipid
++ local bavar=bootauth
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegrarcm_v2 ']'
++ rcmcmd=tegrarcm_v2
++ '[' -n '' ']'
++ pushd /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader
+++ ./tegrarcm_v2 --uid
+++ grep BR_CID
+++ cut '-d ' -f2
++ ECID=0x818010016451184210000000190303c0
++ popd
++ '[' 0x818010016451184210000000190303c0 '!=' '' ']'
++ idval_1=0x18
++ eval 'hwchipid="0x18"'
+++ hwchipid=0x18
++ idval_2=0x10
++ flval=8
++ baval=
++ '[' 0x18 = 0x21 -o 0x18 = 0x12 -o 0x18 = 0x00 -a 0x10 = 0x21 ']'
++ '[' 0x18 = 0x80 ']'
++ case ${flval} in
++ flval=fuselevel_production
++ eval 'fuselevel="fuselevel_production"'
+++ fuselevel=fuselevel_production
++ eval 'bootauth=""'
+++ bootauth=
++ '[' fuselevel_production '!=' fuselevel_production ']'
++ declare -F -f process_fuse_level
++ '[' 0 -eq 0 ']'
++ process_fuse_level fuselevel_production
++ local fuselevel=fuselevel_production
++ local srctoken=_dev
++ local trgtoken=_prod
++ '[' fuselevel_production = fuselevel_unknown ']'
++ '[' fuselevel_production = fuselevel_nofuse ']'
++ sub_var_token WB0BOOT warmboot_dev.bin warmboot.bin
++ local var=WB0BOOT
++ local from=warmboot_dev.bin
++ local to=warmboot.bin
++ '[' WB0BOOT '!=' '' -a bootloader/t186ref/warmboot.bin '!=' '' ']'
++ [[ bootloader/t186ref/warmboot.bin =~ warmboot_dev\.bin ]]
++ sub_var_token MTSPREBOOT _dev _prod
++ local var=MTSPREBOOT
++ local from=_dev
++ local to=_prod
++ '[' MTSPREBOOT '!=' '' -a bootloader/preboot_d15_prod_cr.bin '!=' '' ']'
++ [[ bootloader/preboot_d15_prod_cr.bin =~ _dev ]]
++ sub_var_token MTS _dev _prod
++ local var=MTS
++ local from=_dev
++ local to=_prod
++ '[' MTS '!=' '' -a bootloader/mce_mts_d15_prod_cr.bin '!=' '' ']'
++ [[ bootloader/mce_mts_d15_prod_cr.bin =~ _dev ]]
++ sub_var_token MB1FILE _dev _prod
++ local var=MB1FILE
++ local from=_dev
++ local to=_prod
++ '[' MB1FILE '!=' '' -a bootloader/mb1_prod.bin '!=' '' ']'
++ [[ bootloader/mb1_prod.bin =~ _dev ]]
++ sub_var_token SOSFILE _dev _prod
++ local var=SOSFILE
++ local from=_dev
++ local to=_prod
++ '[' SOSFILE '!=' '' -a bootloader/mb1_recovery_prod.bin '!=' '' ']'
++ [[ bootloader/mb1_recovery_prod.bin =~ _dev ]]
++ bd_ver=
++ bd_id=
++ bd_sku=
++ bd_rev=
++ declare -F -f process_board_version
++ '[' 0 -eq 0 ']'
++ '[' 0 -ne 1 ']'
++ get_board_version bd_id bd_ver bd_sku bd_rev
++ local args=
++ local __board_id=bd_id
++ local __board_version=bd_ver
++ local __board_sku=bd_sku
++ local __board_revision=bd_rev
++ local 'command=dump eeprom boardinfo cvm.bin'
++ local boardid
++ local boardversion
++ local boardsku
++ local boardrevision
++ '[' -n '' ']'
++ '[' '' '!=' '' ']'
++ args+='--chip 0x18 '
++ args+='--applet "/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin" '
++ args+=' '
++ SKIPUID=
++ '[' 0x18 = 0x19 ']'
++ args+='--cmd "dump eeprom boardinfo cvm.bin" '
++ local 'cmd=./tegraflash.py --chip 0x18 --applet "/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin"  --cmd "dump eeprom boardinfo cvm.bin" '
++ pushd /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader
++ '[' '' '!=' '' ']'
++ echo './tegraflash.py --chip 0x18 --applet "/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin"  --cmd "dump eeprom boardinfo cvm.bin" '
+./tegraflash.py --chip 0x18 --applet "/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin"  --cmd "dump eeprom boardinfo cvm.bin" 
++ eval './tegraflash.py --chip 0x18 --applet "/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin"  --cmd "dump eeprom boardinfo cvm.bin" '
+++ ./tegraflash.py --chip 0x18 --applet /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin --cmd 'dump eeprom boardinfo cvm.bin'
+Welcome to Tegra Flash
+version 1.0.0
+Type ? or help for help and q or quit to exit
+Use ! to execute system commands
+ 
+[   0.0035 ] Generating RCM messages
+[   0.0044 ] tegrarcm_v2 --listrcm rcm_list.xml --chip 0x18 0 --download rcm /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin 0 0
+[   0.0052 ] RCM 0 is saved as rcm_0.rcm
+[   0.0057 ] RCM 1 is saved as rcm_1.rcm
+[   0.0057 ] List of rcm files are saved in rcm_list.xml
+[   0.0057 ] 
+[   0.0057 ] Signing RCM messages
+[   0.0065 ] tegrasign_v2 --key None --list rcm_list.xml --pubkeyhash pub_key.key
+[   0.0074 ] Assuming zero filled SBK key
+[   0.0112 ] 
+[   0.0112 ] Copying signature to RCM mesages
+[   0.0120 ] tegrarcm_v2 --chip 0x18 0 --updatesig rcm_list_signed.xml
+[   0.0132 ] 
+[   0.0132 ] Boot Rom communication
+[   0.0140 ] tegrarcm_v2 --chip 0x18 0 --rcm rcm_list_signed.xml
+[   0.0149 ] BootRom is not running
+[   5.2551 ] 
+[   6.2586 ] tegrarcm_v2 --isapplet
+Traceback (most recent call last):
+  File "./tegraflash.py", line 1280, in <module>
+    tegraflash_run_commands()
+  File "./tegraflash.py", line 1149, in tegraflash_run_commands
+    interpreter.onecmd(command)
+  File "/usr/lib/python2.7/cmd.py", line 221, in onecmd
+    return func(arg)
+  File "./tegraflash.py", line 779, in do_dump
+    tegraflash_dump(exports, args)
+  File "/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegraflash_internal.py", line 1147, in tegraflash_dump
+    tegraflash_send_tboot(tegrarcm_values['--signed_list'])
+  File "/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegraflash_internal.py", line 2119, in tegraflash_send_tboot
+    tegraflash_poll_applet_bl()
+  File "/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegraflash_internal.py", line 2223, in tegraflash_poll_applet_bl
+    if check_ismb1() or check_ismb2() or check_iscpubl():
+  File "/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegraflash_internal.py", line 2162, in check_ismb1
+    run_command(command)
+  File "/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegraflash_internal.py", line 195, in run_command
+    log = print_process(process, enable_print)
+  File "/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegraflash_internal.py", line 155, in print_process
+    output = process.stdout.read(1)
+KeyboardInterrupt
++ chkerr 'Reading board information failed.'
++ '[' 1 -ne 0 ']'
++ '[' 'Reading board information failed.' '!=' '' ']'
++ echo 'Reading board information failed.'
+Reading board information failed.
++ exit 1

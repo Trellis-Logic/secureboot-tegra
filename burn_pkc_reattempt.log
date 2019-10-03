@@ -1,0 +1,112 @@
++ noburn=0
++ jtag_disable=yes
++ getopts c:d:i:jk:l:o:pr:s:D:H:S:X:-: OPTION
++ case $OPTION in
++ jtag_disable=no
++ getopts c:d:i:jk:l:o:pr:s:D:H:S:X:-: OPTION
++ case $OPTION in
++ tid=0x18
++ pkcopt+='-i 0x18 '
++ getopts c:d:i:jk:l:o:pr:s:D:H:S:X:-: OPTION
++ case $OPTION in
++ Ctype=PKC
++ pkcopt+='-f PKC '
++ getopts c:d:i:jk:l:o:pr:s:D:H:S:X:-: OPTION
++ case $OPTION in
++ set_productionmode=yes
++ getopts c:d:i:jk:l:o:pr:s:D:H:S:X:-: OPTION
++ case $OPTION in
++ KEYFILE=../rsa_priv.pem
++ getopts c:d:i:jk:l:o:pr:s:D:H:S:X:-: OPTION
++ '[' 0x18 = '' ']'
++ '[' 0x18 '!=' 0x40 -a 0x18 '!=' 0x21 -a 0x18 '!=' 0x18 -a 0x18 '!=' 0x19 ']'
++ shift 8
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/pkc/keyviadb ']'
++ '[' 0x18 = 0x18 -o 0x18 = 0x19 ']'
++ '[' 1 -ne 1 ']'
++ '[' 1 -eq 1 ']'
++ nargs=1
++ ext_target_board=jetson-tx2
++ '[' '!' -r jetson-tx2.conf ']'
++++ dirname ./odmfuse.sh
+++ cd .
+++ pwd
++ LDK_DIR=/home/dan/secureboot-tegra/Linux_for_Tegra
+++ readlink -f /home/dan/secureboot-tegra/Linux_for_Tegra
++ LDK_DIR=/home/dan/secureboot-tegra/Linux_for_Tegra
++ source jetson-tx2.conf
+++ BPFDTB_FILE=tegra186-a02-bpmp-quill-p3310-1000-a00-00-te770d-ucm2.dtb
+++ source /home/dan/secureboot-tegra/Linux_for_Tegra/p2771-0000.conf.common
++++ CHIPID=0x18
++++ EMMC_CFG=flash_l4t_t186.xml
++++ BOOTPARTSIZE=8388608
++++ EMMCSIZE=31276924928
++++ ITS_FILE=
++++ EMMC_BCT=P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg
++++ DTB_FILE=tegra186-quill-p3310-1000-a00-00-base.dtb
++++ TBCDTB_FILE=tegra186-quill-p3310-1000-a00-00-base.dtb
++++ '[' -z '' ']'
++++ USE_UBOOT=1
++++ ROOTFSSIZE=28GiB
++++ CMDLINE_ADD='console=ttyS0,115200n8 console=tty0 fbcon=map:0 net.ifnames=0'
++++ target_board=t186ref
++++ ROOT_DEV='mmcblk0p12 ------------ internal eMMC.
+        sda1 ----------------- external USB devices. (USB memory stick, HDD)
+        eth0 ----------------- nfsroot via RJ45 Ethernet port.
+        eth1 ----------------- nfsroot via USB Ethernet interface.'
++++ TEGRABOOT=bootloader/t186ref/nvtboot.bin
++++ WB0BOOT=bootloader/t186ref/warmboot.bin
++++ FLASHER=bootloader/nvtboot_recovery_cpu.bin
++++ BOOTLOADER=bootloader/nvtboot_cpu.bin
++++ INITRD=bootloader/l4t_initrd.img
++++ TBCFILE=bootloader/cboot.bin
++++ BPFFILE=bootloader/bpmp.bin
++++ TOSFILE=bootloader/tos.img
++++ EKSFILE=bootloader/eks.img
++++ MTSPREBOOT=bootloader/preboot_d15_prod_cr.bin
++++ MTS=bootloader/mce_mts_d15_prod_cr.bin
++++ MB1FILE=bootloader/mb1_prod.bin
++++ SOSFILE=bootloader/mb1_recovery_prod.bin
++++ MB2BLFILE=bootloader/nvtboot_recovery.bin
++++ BCT=--sdram_config
++++ BINSARGS='--bins "'
++++ DEV_PARAMS=emmc.cfg
++++ SCR_CONFIG=minimal_scr.cfg
++++ SCR_COLD_BOOT_CONFIG=mobile_scr.cfg
++++ MISC_CONFIG=tegra186-mb1-bct-misc-si-l4t.cfg
++++ PINMUX_CONFIG=tegra186-mb1-bct-pinmux-quill-p3310-1000-a00.cfg
++++ PMIC_CONFIG=tegra186-mb1-bct-pmic-quill-p3310-1000-a00.cfg
++++ PMC_CONFIG=tegra186-mb1-bct-pad-quill-p3310-1000-a00.cfg
++++ PROD_CONFIG=tegra186-mb1-bct-prod-quill-p3310-1000-a00.cfg
++++ BOOTROM_CONFIG=tegra186-mb1-bct-bootrom-quill-p3310-1000-a00.cfg
++++ DEFAULT_FAB=B01
++ BL_DIR=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader
++ TARGET_DIR=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref
++ KERNEL_DIR=/home/dan/secureboot-tegra/Linux_for_Tegra/kernel
++ DTB_DIR=/home/dan/secureboot-tegra/Linux_for_Tegra/kernel/dtb
++ '[' 0 -ne 1 ']'
++ get_fuse_level fuselevel hwchipid bootauth
++ local ECID
++ local rcmcmd
++ local inst_args=
++ local idval_1=
++ local idval_2=
++ local flval=
++ local baval=None
++ local flvar=fuselevel
++ local hivar=hwchipid
++ local bavar=bootauth
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegrarcm_v2 ']'
++ rcmcmd=tegrarcm_v2
++ '[' -n '' ']'
++ pushd /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader
+++ ./tegrarcm_v2 --uid
+++ grep BR_CID
+++ cut '-d ' -f2
++ ECID=
++ popd
++ '[' '' '!=' '' ']'
++ '[' '' '!=' fuselevel_production ']'
++ echo 'Error: Cannot fuse non-production board.'
+Error: Cannot fuse non-production board.
++ exit 1

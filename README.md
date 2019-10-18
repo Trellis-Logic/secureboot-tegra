@@ -3,7 +3,7 @@ in the [Nvidia L4T Development Guide](https://docs.nvidia.com/jetson/l4t/index.h
 
 The scripts are currently hard-coded to use Jetson TX2 as the target.
 
-I'm not able to get the ```./burn-pkc.sh``` step to work on my setup at this time, see [this forum thread](https://devtalk.nvidia.com/default/topic/1064080/jetson-tx2/secure-boot-odmfuse-programming-step-fail-on-32-2-1/post/5393200/#5393200) for details and current status.
+I'm not able to get the ```./burn-pkc.sh``` step to work on my setup at this time, see [this forum thread](https://devtalk.nvidia.com/default/topic/1064080/jetson-tx2/secure-boot-odmfuse-programming-step-fail-on-32-2-1/post/5393200) for details and current status.
 
 # Downloading Packages and preparing for use
 Run

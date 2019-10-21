@@ -1,0 +1,30 @@
+*** odmfuse.sh	2019-10-19 08:41:50.639811751 -0700
+--- odmfuse-modified.sh	2019-10-19 08:39:29.953914613 -0700
+*************** get_board_version ()
+*** 821,826 ****
+--- 821,828 ----
+  		args+="--soft_fuses ${soft_fusesname} "
+  		args+="--bins \"mb2_applet ${MB2APPLET}\" ";
+  		command+=";reboot recovery"
++ 	elif [ "${CHIPID}" = "0x18" ]; then
++ 		args+="--skipuid "
+  	fi
+  	args+="--cmd \"${command}\" ";
+  	local cmd="./tegraflash.py ${args}";
+*************** if [ $noburn -eq 1 ]; then
+*** 1436,1442 ****
+  	exit $?;
+  fi;
+  
+! if [ "${tid}" = "0x18" -o "${tid}" = "0x19" ]; then
+  	fcmd+=" --skipuid ";
+  fi;
+  
+--- 1438,1444 ----
+  	exit $?;
+  fi;
+  
+! if [ "${tid}" = "0x19" ]; then
+  	fcmd+=" --skipuid ";
+  fi;
+  

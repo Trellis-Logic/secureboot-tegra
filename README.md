@@ -3,7 +3,7 @@ in the [Nvidia L4T Development Guide](https://docs.nvidia.com/jetson/l4t/index.h
 
 The scripts are currently hard-coded to use Jetson TX2 as the target.
 
-The scripts contain a patch provided by Matt Madsion (see (this link)[https://github.com/madisongh/meta-tegra/issues/193]) which fix fuse programming steps on Jetson TX2.
+The scripts contain a patch provided by Matt Madison (see [this link](https://github.com/madisongh/meta-tegra/issues/193)) which fixes fuse programming steps on Jetson TX2.
 
 # Downloading Packages and preparing for use
 Run

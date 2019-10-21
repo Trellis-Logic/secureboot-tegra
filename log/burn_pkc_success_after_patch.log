@@ -1,0 +1,1906 @@
+sudo ./odmfuse.sh -j -i 0x18 -c PKC -p -k ../rsa_priv.pem jetson-tx2
++ noburn=0
++ jtag_disable=yes
++ getopts c:d:i:jk:l:o:pr:s:D:H:S:X:-: OPTION
++ case $OPTION in
++ jtag_disable=no
++ getopts c:d:i:jk:l:o:pr:s:D:H:S:X:-: OPTION
++ case $OPTION in
++ tid=0x18
++ pkcopt+='-i 0x18 '
++ getopts c:d:i:jk:l:o:pr:s:D:H:S:X:-: OPTION
++ case $OPTION in
++ Ctype=PKC
++ pkcopt+='-f PKC '
++ getopts c:d:i:jk:l:o:pr:s:D:H:S:X:-: OPTION
++ case $OPTION in
++ set_productionmode=yes
++ getopts c:d:i:jk:l:o:pr:s:D:H:S:X:-: OPTION
++ case $OPTION in
++ KEYFILE=../rsa_priv.pem
++ getopts c:d:i:jk:l:o:pr:s:D:H:S:X:-: OPTION
++ '[' 0x18 = '' ']'
++ '[' 0x18 '!=' 0x40 -a 0x18 '!=' 0x21 -a 0x18 '!=' 0x18 -a 0x18 '!=' 0x19 ']'
++ shift 8
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/pkc/keyviadb ']'
++ '[' 0x18 = 0x18 -o 0x18 = 0x19 ']'
++ '[' 1 -ne 1 ']'
++ '[' 1 -eq 1 ']'
++ nargs=1
++ ext_target_board=jetson-tx2
++ '[' '!' -r jetson-tx2.conf ']'
++++ dirname ./odmfuse.sh
+++ cd .
+++ pwd
++ LDK_DIR=/home/dan/secureboot-tegra/Linux_for_Tegra
+++ readlink -f /home/dan/secureboot-tegra/Linux_for_Tegra
++ LDK_DIR=/home/dan/secureboot-tegra/Linux_for_Tegra
++ source jetson-tx2.conf
+++ BPFDTB_FILE=tegra186-a02-bpmp-quill-p3310-1000-a00-00-te770d-ucm2.dtb
+++ source /home/dan/secureboot-tegra/Linux_for_Tegra/p2771-0000.conf.common
++++ CHIPID=0x18
++++ EMMC_CFG=flash_l4t_t186.xml
++++ BOOTPARTSIZE=8388608
++++ EMMCSIZE=31276924928
++++ ITS_FILE=
++++ EMMC_BCT=P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg
++++ DTB_FILE=tegra186-quill-p3310-1000-a00-00-base.dtb
++++ TBCDTB_FILE=tegra186-quill-p3310-1000-a00-00-base.dtb
++++ '[' -z '' ']'
++++ USE_UBOOT=1
++++ ROOTFSSIZE=28GiB
++++ CMDLINE_ADD='console=ttyS0,115200n8 console=tty0 fbcon=map:0 net.ifnames=0'
++++ target_board=t186ref
++++ ROOT_DEV='mmcblk0p12 ------------ internal eMMC.
+        sda1 ----------------- external USB devices. (USB memory stick, HDD)
+        eth0 ----------------- nfsroot via RJ45 Ethernet port.
+        eth1 ----------------- nfsroot via USB Ethernet interface.'
++++ TEGRABOOT=bootloader/t186ref/nvtboot.bin
++++ WB0BOOT=bootloader/t186ref/warmboot.bin
++++ FLASHER=bootloader/nvtboot_recovery_cpu.bin
++++ BOOTLOADER=bootloader/nvtboot_cpu.bin
++++ INITRD=bootloader/l4t_initrd.img
++++ TBCFILE=bootloader/cboot.bin
++++ BPFFILE=bootloader/bpmp.bin
++++ TOSFILE=bootloader/tos.img
++++ EKSFILE=bootloader/eks.img
++++ MTSPREBOOT=bootloader/preboot_d15_prod_cr.bin
++++ MTS=bootloader/mce_mts_d15_prod_cr.bin
++++ MB1FILE=bootloader/mb1_prod.bin
++++ SOSFILE=bootloader/mb1_recovery_prod.bin
++++ MB2BLFILE=bootloader/nvtboot_recovery.bin
++++ BCT=--sdram_config
++++ BINSARGS='--bins "'
++++ DEV_PARAMS=emmc.cfg
++++ SCR_CONFIG=minimal_scr.cfg
++++ SCR_COLD_BOOT_CONFIG=mobile_scr.cfg
++++ MISC_CONFIG=tegra186-mb1-bct-misc-si-l4t.cfg
++++ PINMUX_CONFIG=tegra186-mb1-bct-pinmux-quill-p3310-1000-a00.cfg
++++ PMIC_CONFIG=tegra186-mb1-bct-pmic-quill-p3310-1000-a00.cfg
++++ PMC_CONFIG=tegra186-mb1-bct-pad-quill-p3310-1000-a00.cfg
++++ PROD_CONFIG=tegra186-mb1-bct-prod-quill-p3310-1000-a00.cfg
++++ BOOTROM_CONFIG=tegra186-mb1-bct-bootrom-quill-p3310-1000-a00.cfg
++++ DEFAULT_FAB=B01
++ BL_DIR=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader
++ TARGET_DIR=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref
++ KERNEL_DIR=/home/dan/secureboot-tegra/Linux_for_Tegra/kernel
++ DTB_DIR=/home/dan/secureboot-tegra/Linux_for_Tegra/kernel/dtb
++ '[' 0 -ne 1 ']'
++ get_fuse_level fuselevel hwchipid bootauth
++ local ECID
++ local rcmcmd
++ local inst_args=
++ local idval_1=
++ local idval_2=
++ local flval=
++ local baval=None
++ local flvar=fuselevel
++ local hivar=hwchipid
++ local bavar=bootauth
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegrarcm_v2 ']'
++ rcmcmd=tegrarcm_v2
++ '[' -n '' ']'
++ pushd /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader
+++ ./tegrarcm_v2 --uid
+++ grep BR_CID
+++ cut '-d ' -f2
++ ECID=0x818010016451184210000000190303c0
++ popd
++ '[' 0x818010016451184210000000190303c0 '!=' '' ']'
++ idval_1=0x18
++ eval 'hwchipid="0x18"'
+++ hwchipid=0x18
++ idval_2=0x10
++ flval=8
++ baval=
++ '[' 0x18 = 0x21 -o 0x18 = 0x12 -o 0x18 = 0x00 -a 0x10 = 0x21 ']'
++ '[' 0x18 = 0x80 ']'
++ case ${flval} in
++ flval=fuselevel_production
++ eval 'fuselevel="fuselevel_production"'
+++ fuselevel=fuselevel_production
++ eval 'bootauth=""'
+++ bootauth=
++ '[' fuselevel_production '!=' fuselevel_production ']'
++ declare -F -f process_fuse_level
++ '[' 0 -eq 0 ']'
++ process_fuse_level fuselevel_production
++ local fuselevel=fuselevel_production
++ local srctoken=_dev
++ local trgtoken=_prod
++ '[' fuselevel_production = fuselevel_unknown ']'
++ '[' fuselevel_production = fuselevel_nofuse ']'
++ sub_var_token WB0BOOT warmboot_dev.bin warmboot.bin
++ local var=WB0BOOT
++ local from=warmboot_dev.bin
++ local to=warmboot.bin
++ '[' WB0BOOT '!=' '' -a bootloader/t186ref/warmboot.bin '!=' '' ']'
++ [[ bootloader/t186ref/warmboot.bin =~ warmboot_dev\.bin ]]
++ sub_var_token MTSPREBOOT _dev _prod
++ local var=MTSPREBOOT
++ local from=_dev
++ local to=_prod
++ '[' MTSPREBOOT '!=' '' -a bootloader/preboot_d15_prod_cr.bin '!=' '' ']'
++ [[ bootloader/preboot_d15_prod_cr.bin =~ _dev ]]
++ sub_var_token MTS _dev _prod
++ local var=MTS
++ local from=_dev
++ local to=_prod
++ '[' MTS '!=' '' -a bootloader/mce_mts_d15_prod_cr.bin '!=' '' ']'
++ [[ bootloader/mce_mts_d15_prod_cr.bin =~ _dev ]]
++ sub_var_token MB1FILE _dev _prod
++ local var=MB1FILE
++ local from=_dev
++ local to=_prod
++ '[' MB1FILE '!=' '' -a bootloader/mb1_prod.bin '!=' '' ']'
++ [[ bootloader/mb1_prod.bin =~ _dev ]]
++ sub_var_token SOSFILE _dev _prod
++ local var=SOSFILE
++ local from=_dev
++ local to=_prod
++ '[' SOSFILE '!=' '' -a bootloader/mb1_recovery_prod.bin '!=' '' ']'
++ [[ bootloader/mb1_recovery_prod.bin =~ _dev ]]
++ bd_ver=
++ bd_id=
++ bd_sku=
++ bd_rev=
++ declare -F -f process_board_version
++ '[' 0 -eq 0 ']'
++ '[' 0 -ne 1 ']'
++ get_board_version bd_id bd_ver bd_sku bd_rev
++ local args=
++ local __board_id=bd_id
++ local __board_version=bd_ver
++ local __board_sku=bd_sku
++ local __board_revision=bd_rev
++ local 'command=dump eeprom boardinfo cvm.bin'
++ local boardid
++ local boardversion
++ local boardsku
++ local boardrevision
++ '[' -n '' ']'
++ '[' '' '!=' '' ']'
++ args+='--chip 0x18 '
++ args+='--applet "/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin" '
++ args+=' '
++ SKIPUID=
++ '[' 0x18 = 0x19 ']'
++ '[' 0x18 = 0x18 ']'
++ args+='--skipuid '
++ args+='--cmd "dump eeprom boardinfo cvm.bin" '
++ local 'cmd=./tegraflash.py --chip 0x18 --applet "/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin"  --skipuid --cmd "dump eeprom boardinfo cvm.bin" '
++ pushd /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader
++ '[' '' '!=' '' ']'
++ echo './tegraflash.py --chip 0x18 --applet "/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin"  --skipuid --cmd "dump eeprom boardinfo cvm.bin" '
+./tegraflash.py --chip 0x18 --applet "/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin"  --skipuid --cmd "dump eeprom boardinfo cvm.bin"
++ eval './tegraflash.py --chip 0x18 --applet "/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin"  --skipuid --cmd "dump eeprom boardinfo cvm.bin" '
+++ ./tegraflash.py --chip 0x18 --applet /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin --skipuid --cmd 'dump eeprom boardinfo cvm.bin'
+Welcome to Tegra Flash
+version 1.0.0
+Type ? or help for help and q or quit to exit
+Use ! to execute system commands
+
+[   0.0043 ] Generating RCM messages
+[   0.0067 ] tegrarcm_v2 --listrcm rcm_list.xml --chip 0x18 0 --download rcm /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin 0 0
+[   0.0076 ] RCM 0 is saved as rcm_0.rcm
+[   0.0090 ] RCM 1 is saved as rcm_1.rcm
+[   0.0090 ] List of rcm files are saved in rcm_list.xml
+[   0.0090 ]
+[   0.0090 ] Signing RCM messages
+[   0.0109 ] tegrasign_v2 --key None --list rcm_list.xml --pubkeyhash pub_key.key
+[   0.0118 ] Assuming zero filled SBK key
+[   0.0196 ]
+[   0.0196 ] Copying signature to RCM mesages
+[   0.0208 ] tegrarcm_v2 --chip 0x18 0 --updatesig rcm_list_signed.xml
+[   0.0222 ]
+[   0.0222 ] Boot Rom communication
+[   0.0231 ] tegrarcm_v2 --chip 0x18 0 --rcm rcm_list_signed.xml --skipuid
+[   0.0239 ] RCM version 0X180001
+[   0.0250 ] Boot Rom communication completed
+[   1.0310 ]
+[   2.0333 ] tegrarcm_v2 --isapplet
+[   2.0341 ] Applet version 01.00.0000
+[   2.0526 ]
+[   2.0537 ] Retrieving EEPROM data
+[   2.0539 ] tegrarcm_v2 --oem platformdetails eeprom cvm /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/cvm.bin
+[   2.0548 ] Applet version 01.00.0000
+[   2.0885 ] Saved platform info in /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/cvm.bin
+[   2.1614 ]
++ chkerr 'Reading board information failed.'
++ '[' 0 -ne 0 ']'
++ '[' 'Reading board information failed.' = '' ']'
++ '[' '' = '' ']'
+++ ./chkbdinfo -i cvm.bin
++ boardid='3310 '
+++ ./chkbdinfo -f cvm.bin
++ boardversion='D01 '
+++ ./chkbdinfo -k cvm.bin
++ boardsku='1000 '
+++ ./chkbdinfo -r cvm.bin
++ boardrevision='B.0 '
++ chkerr 'Parsing board information failed.'
++ '[' 0 -ne 0 ']'
++ '[' 'Parsing board information failed.' = '' ']'
++ popd
++ eval 'bd_id=3310 '
+++ bd_id=3310
++ eval 'bd_ver=D01 '
+++ bd_ver=D01
++ eval 'bd_sku=1000 '
+++ bd_sku=1000
++ eval 'bd_rev=B.0 '
+++ bd_rev=B.0
++ BOARDID=3310
++ BOARDSKU=1000
++ FAB=D01
++ BOARDREV=B.0
++ '[' '' '!=' '' ']'
++ process_board_version 3310 D01 1000 B.0 ''
++ local board_id=3310
++ local board_version=D01
++ local board_sku=1000
++ local board_revision=B.0
++ local bdv=D01
++ local bid=3310
++ local uboot_build=500
++ local fromfab=-a00
++ local tofab=-c03
++ local pmicfab=-c00
++ local bpfdtbfab=-c00
++ local tbcdtbfab=-c03
++ local kerndtbfab=-c03
++ ODMDATA=0x1090000
++ echo 'Board ID(3310) version(D01) sku(1000) revision(B.0)'
+Board ID(3310) version(D01) sku(1000) revision(B.0)
++ [[ D01 =~ ^[A-Z0-9][0-9][0-9]$ ]]
++ '[' 3310 = 3313 ']'
++ '[' 3310 = 3301 ']'
++ '[' 3310 = 3489 ']'
++ '[' D01 '<' 300 ']'
++ '[' D01 '<' 500 ']'
++ '[' D01 '<' 800 ']'
++ '[' D01 '<' 900 ']'
++ '[' D01 '<' A00 ']'
++ '[' D01 '<' B00 ']'
++ '[' D01 '<' B01 ']'
++ '[' D01 = B01 -o D01 '>' B01 ']'
++ pmicfab=-c04
++ bpfdtbfab=-c04
++ sub_var_token BPFDTB_FILE -a00 -c04
++ local var=BPFDTB_FILE
++ local from=-a00
++ local to=-c04
++ '[' BPFDTB_FILE '!=' '' -a tegra186-a02-bpmp-quill-p3310-1000-a00-00-te770d-ucm2.dtb '!=' '' ']'
++ [[ tegra186-a02-bpmp-quill-p3310-1000-a00-00-te770d-ucm2.dtb =~ -a00 ]]
+++ echo tegra186-a02-bpmp-quill-p3310-1000-a00-00-te770d-ucm2.dtb
+++ sed -e s/-a00/-c04/
++ local val=tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb
++ eval BPFDTB_FILE=tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb
+++ BPFDTB_FILE=tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb
++ sub_var_token PINMUX_CONFIG -a00 -c03
++ local var=PINMUX_CONFIG
++ local from=-a00
++ local to=-c03
++ '[' PINMUX_CONFIG '!=' '' -a tegra186-mb1-bct-pinmux-quill-p3310-1000-a00.cfg '!=' '' ']'
++ [[ tegra186-mb1-bct-pinmux-quill-p3310-1000-a00.cfg =~ -a00 ]]
+++ echo tegra186-mb1-bct-pinmux-quill-p3310-1000-a00.cfg
+++ sed -e s/-a00/-c03/
++ local val=tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg
++ eval PINMUX_CONFIG=tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg
+++ PINMUX_CONFIG=tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg
++ sub_var_token PMIC_CONFIG -a00 -c04
++ local var=PMIC_CONFIG
++ local from=-a00
++ local to=-c04
++ '[' PMIC_CONFIG '!=' '' -a tegra186-mb1-bct-pmic-quill-p3310-1000-a00.cfg '!=' '' ']'
++ [[ tegra186-mb1-bct-pmic-quill-p3310-1000-a00.cfg =~ -a00 ]]
+++ echo tegra186-mb1-bct-pmic-quill-p3310-1000-a00.cfg
+++ sed -e s/-a00/-c04/
++ local val=tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg
++ eval PMIC_CONFIG=tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg
+++ PMIC_CONFIG=tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg
++ sub_var_token PMC_CONFIG -a00 -c03
++ local var=PMC_CONFIG
++ local from=-a00
++ local to=-c03
++ '[' PMC_CONFIG '!=' '' -a tegra186-mb1-bct-pad-quill-p3310-1000-a00.cfg '!=' '' ']'
++ [[ tegra186-mb1-bct-pad-quill-p3310-1000-a00.cfg =~ -a00 ]]
+++ echo tegra186-mb1-bct-pad-quill-p3310-1000-a00.cfg
+++ sed -e s/-a00/-c03/
++ local val=tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg
++ eval PMC_CONFIG=tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg
+++ PMC_CONFIG=tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg
++ sub_var_token PROD_CONFIG -a00 -c03
++ local var=PROD_CONFIG
++ local from=-a00
++ local to=-c03
++ '[' PROD_CONFIG '!=' '' -a tegra186-mb1-bct-prod-quill-p3310-1000-a00.cfg '!=' '' ']'
++ [[ tegra186-mb1-bct-prod-quill-p3310-1000-a00.cfg =~ -a00 ]]
+++ echo tegra186-mb1-bct-prod-quill-p3310-1000-a00.cfg
+++ sed -e s/-a00/-c03/
++ local val=tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg
++ eval PROD_CONFIG=tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg
+++ PROD_CONFIG=tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg
++ sub_var_token BOOTROM_CONFIG -a00 -c03
++ local var=BOOTROM_CONFIG
++ local from=-a00
++ local to=-c03
++ '[' BOOTROM_CONFIG '!=' '' -a tegra186-mb1-bct-bootrom-quill-p3310-1000-a00.cfg '!=' '' ']'
++ [[ tegra186-mb1-bct-bootrom-quill-p3310-1000-a00.cfg =~ -a00 ]]
+++ echo tegra186-mb1-bct-bootrom-quill-p3310-1000-a00.cfg
+++ sed -e s/-a00/-c03/
++ local val=tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg
++ eval BOOTROM_CONFIG=tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg
+++ BOOTROM_CONFIG=tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg
++ sub_var_token TBCDTB_FILE -a00 -c03
++ local var=TBCDTB_FILE
++ local from=-a00
++ local to=-c03
++ '[' TBCDTB_FILE '!=' '' -a tegra186-quill-p3310-1000-a00-00-base.dtb '!=' '' ']'
++ [[ tegra186-quill-p3310-1000-a00-00-base.dtb =~ -a00 ]]
+++ echo tegra186-quill-p3310-1000-a00-00-base.dtb
+++ sed -e s/-a00/-c03/
++ local val=tegra186-quill-p3310-1000-c03-00-base.dtb
++ eval TBCDTB_FILE=tegra186-quill-p3310-1000-c03-00-base.dtb
+++ TBCDTB_FILE=tegra186-quill-p3310-1000-c03-00-base.dtb
++ sub_var_token DTB_FILE -a00 -c03
++ local var=DTB_FILE
++ local from=-a00
++ local to=-c03
++ '[' DTB_FILE '!=' '' -a tegra186-quill-p3310-1000-a00-00-base.dtb '!=' '' ']'
++ [[ tegra186-quill-p3310-1000-a00-00-base.dtb =~ -a00 ]]
+++ echo tegra186-quill-p3310-1000-a00-00-base.dtb
+++ sed -e s/-a00/-c03/
++ local val=tegra186-quill-p3310-1000-c03-00-base.dtb
++ eval DTB_FILE=tegra186-quill-p3310-1000-c03-00-base.dtb
+++ DTB_FILE=tegra186-quill-p3310-1000-c03-00-base.dtb
++ '[' 1 -eq 1 ']'
++ DFLT_KERNEL_IMAGE=bootloader/t186ref/p2771-0000/
++ DFLT_KERNEL_IMAGE+=500/u-boot.bin
++ mkfuseargs
++ FUSEARGS=
++ local bldtb
++ local BD=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT
++ '[' 0x18 = 0x19 ']'
++ mkarg sdram_config /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg BCTARGS
++ local var=sdram_config
++ local varname=sdram_configname
++ eval sdram_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg
+++ sdram_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg ']'
+++ readlink -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg
++ eval sdram_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg
+++ sdram_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg
++ eval sdram_configname=P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg
+++ sdram_configname=P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg
++ cp2local sdram_config /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg
++ local src=sdram_config
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg ']'
++ echo -n 'copying sdram_config(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg)... '
+copying sdram_config(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg)... + cp -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg
++ chkerr
++ '[' 0 -ne 0 ']'
++ '[' '' = '' ']'
++ echo done.
+done.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' BCTARGS '!=' '' ']'
++ '[' BCTARGS = BINSARGS ']'
++ eval 'BCTARGS+="--sdram_config P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg ";'
+++ BCTARGS+='--sdram_config P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg '
++ return 0
++ mkarg misc_config /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-misc-si-l4t.cfg BCTARGS
++ local var=misc_config
++ local varname=misc_configname
++ eval misc_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-misc-si-l4t.cfg
+++ misc_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-misc-si-l4t.cfg
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-misc-si-l4t.cfg ']'
+++ readlink -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-misc-si-l4t.cfg
++ eval misc_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-misc-si-l4t.cfg
+++ misc_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-misc-si-l4t.cfg
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-misc-si-l4t.cfg
++ eval misc_configname=tegra186-mb1-bct-misc-si-l4t.cfg
+++ misc_configname=tegra186-mb1-bct-misc-si-l4t.cfg
++ cp2local misc_config /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-misc-si-l4t.cfg
++ local src=misc_config
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-misc-si-l4t.cfg = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-misc-si-l4t.cfg ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-misc-si-l4t.cfg = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-misc-si-l4t.cfg -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-misc-si-l4t.cfg = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-misc-si-l4t.cfg ']'
++ echo -n 'copying misc_config(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-misc-si-l4t.cfg)... '
+copying misc_config(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-misc-si-l4t.cfg)... + cp -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-misc-si-l4t.cfg /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-misc-si-l4t.cfg
++ chkerr
++ '[' 0 -ne 0 ']'
++ '[' '' = '' ']'
++ echo done.
+done.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' BCTARGS '!=' '' ']'
++ '[' BCTARGS = BINSARGS ']'
++ eval 'BCTARGS+="--misc_config tegra186-mb1-bct-misc-si-l4t.cfg ";'
+++ BCTARGS+='--misc_config tegra186-mb1-bct-misc-si-l4t.cfg '
++ return 0
++ mkarg pinmux_config /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg BCTARGS
++ local var=pinmux_config
++ local varname=pinmux_configname
++ eval pinmux_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg
+++ pinmux_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg ']'
+++ readlink -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg
++ eval pinmux_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg
+++ pinmux_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg
++ eval pinmux_configname=tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg
+++ pinmux_configname=tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg
++ cp2local pinmux_config /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg
++ local src=pinmux_config
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg ']'
++ echo -n 'copying pinmux_config(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg)... '
+copying pinmux_config(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg)... + cp -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg
++ chkerr
++ '[' 0 -ne 0 ']'
++ '[' '' = '' ']'
++ echo done.
+done.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' BCTARGS '!=' '' ']'
++ '[' BCTARGS = BINSARGS ']'
++ eval 'BCTARGS+="--pinmux_config tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg ";'
+++ BCTARGS+='--pinmux_config tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg '
++ return 0
++ mkarg scr_config /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/minimal_scr.cfg BCTARGS
++ local var=scr_config
++ local varname=scr_configname
++ eval scr_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/minimal_scr.cfg
+++ scr_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/minimal_scr.cfg
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/minimal_scr.cfg ']'
+++ readlink -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/minimal_scr.cfg
++ eval scr_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/minimal_scr.cfg
+++ scr_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/minimal_scr.cfg
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/minimal_scr.cfg
++ eval scr_configname=minimal_scr.cfg
+++ scr_configname=minimal_scr.cfg
++ cp2local scr_config /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/minimal_scr.cfg
++ local src=scr_config
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/minimal_scr.cfg = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/minimal_scr.cfg ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/minimal_scr.cfg = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/minimal_scr.cfg -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/minimal_scr.cfg = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/minimal_scr.cfg ']'
++ echo -n 'copying scr_config(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/minimal_scr.cfg)... '
+copying scr_config(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/minimal_scr.cfg)... + cp -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/minimal_scr.cfg /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/minimal_scr.cfg
++ chkerr
++ '[' 0 -ne 0 ']'
++ '[' '' = '' ']'
++ echo done.
+done.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' BCTARGS '!=' '' ']'
++ '[' BCTARGS = BINSARGS ']'
++ eval 'BCTARGS+="--scr_config minimal_scr.cfg ";'
+++ BCTARGS+='--scr_config minimal_scr.cfg '
++ return 0
++ mkarg scr_cold_boot_config /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/mobile_scr.cfg BCTARGS
++ local var=scr_cold_boot_config
++ local varname=scr_cold_boot_configname
++ eval scr_cold_boot_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/mobile_scr.cfg
+++ scr_cold_boot_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/mobile_scr.cfg
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/mobile_scr.cfg ']'
+++ readlink -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/mobile_scr.cfg
++ eval scr_cold_boot_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/mobile_scr.cfg
+++ scr_cold_boot_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/mobile_scr.cfg
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/mobile_scr.cfg
++ eval scr_cold_boot_configname=mobile_scr.cfg
+++ scr_cold_boot_configname=mobile_scr.cfg
++ cp2local scr_cold_boot_config /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mobile_scr.cfg
++ local src=scr_cold_boot_config
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/mobile_scr.cfg = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/mobile_scr.cfg ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mobile_scr.cfg = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mobile_scr.cfg -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/mobile_scr.cfg = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mobile_scr.cfg ']'
++ echo -n 'copying scr_cold_boot_config(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/mobile_scr.cfg)... '
+copying scr_cold_boot_config(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/mobile_scr.cfg)... + cp -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/mobile_scr.cfg /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mobile_scr.cfg
++ chkerr
++ '[' 0 -ne 0 ']'
++ '[' '' = '' ']'
++ echo done.
+done.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' BCTARGS '!=' '' ']'
++ '[' BCTARGS = BINSARGS ']'
++ eval 'BCTARGS+="--scr_cold_boot_config mobile_scr.cfg ";'
+++ BCTARGS+='--scr_cold_boot_config mobile_scr.cfg '
++ return 0
++ mkarg pmc_config /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg BCTARGS
++ local var=pmc_config
++ local varname=pmc_configname
++ eval pmc_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg
+++ pmc_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg ']'
+++ readlink -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg
++ eval pmc_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg
+++ pmc_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg
++ eval pmc_configname=tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg
+++ pmc_configname=tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg
++ cp2local pmc_config /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg
++ local src=pmc_config
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg ']'
++ echo -n 'copying pmc_config(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg)... '
+copying pmc_config(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg)... + cp -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg
++ chkerr
++ '[' 0 -ne 0 ']'
++ '[' '' = '' ']'
++ echo done.
+done.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' BCTARGS '!=' '' ']'
++ '[' BCTARGS = BINSARGS ']'
++ eval 'BCTARGS+="--pmc_config tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg ";'
+++ BCTARGS+='--pmc_config tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg '
++ return 0
++ mkarg pmic_config /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg BCTARGS
++ local var=pmic_config
++ local varname=pmic_configname
++ eval pmic_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg
+++ pmic_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg ']'
+++ readlink -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg
++ eval pmic_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg
+++ pmic_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg
++ eval pmic_configname=tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg
+++ pmic_configname=tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg
++ cp2local pmic_config /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg
++ local src=pmic_config
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg ']'
++ echo -n 'copying pmic_config(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg)... '
+copying pmic_config(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg)... + cp -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg
++ chkerr
++ '[' 0 -ne 0 ']'
++ '[' '' = '' ']'
++ echo done.
+done.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' BCTARGS '!=' '' ']'
++ '[' BCTARGS = BINSARGS ']'
++ eval 'BCTARGS+="--pmic_config tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg ";'
+++ BCTARGS+='--pmic_config tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg '
++ return 0
++ mkarg br_cmd_config /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg BCTARGS
++ local var=br_cmd_config
++ local varname=br_cmd_configname
++ eval br_cmd_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg
+++ br_cmd_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg ']'
+++ readlink -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg
++ eval br_cmd_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg
+++ br_cmd_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg
++ eval br_cmd_configname=tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg
+++ br_cmd_configname=tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg
++ cp2local br_cmd_config /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg
++ local src=br_cmd_config
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg ']'
++ echo -n 'copying br_cmd_config(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg)... '
+copying br_cmd_config(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg)... + cp -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg
++ chkerr
++ '[' 0 -ne 0 ']'
++ '[' '' = '' ']'
++ echo done.
+done.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' BCTARGS '!=' '' ']'
++ '[' BCTARGS = BINSARGS ']'
++ eval 'BCTARGS+="--br_cmd_config tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg ";'
+++ BCTARGS+='--br_cmd_config tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg '
++ return 0
++ mkarg prod_config /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg BCTARGS
++ local var=prod_config
++ local varname=prod_configname
++ eval prod_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg
+++ prod_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg ']'
+++ readlink -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg
++ eval prod_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg
+++ prod_config=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg
++ eval prod_configname=tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg
+++ prod_configname=tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg
++ cp2local prod_config /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg
++ local src=prod_config
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg ']'
++ echo -n 'copying prod_config(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg)... '
+copying prod_config(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg)... + cp -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg
++ chkerr
++ '[' 0 -ne 0 ']'
++ '[' '' = '' ']'
++ echo done.
+done.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' BCTARGS '!=' '' ']'
++ '[' BCTARGS = BINSARGS ']'
++ eval 'BCTARGS+="--prod_config tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg ";'
+++ BCTARGS+='--prod_config tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg '
++ return 0
++ mkarg dev_params /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/emmc.cfg BCTARGS
++ local var=dev_params
++ local varname=dev_paramsname
++ eval dev_params=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/emmc.cfg
+++ dev_params=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/emmc.cfg
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/emmc.cfg ']'
+++ readlink -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/emmc.cfg
++ eval dev_params=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/emmc.cfg
+++ dev_params=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/emmc.cfg
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/emmc.cfg
++ eval dev_paramsname=emmc.cfg
+++ dev_paramsname=emmc.cfg
++ cp2local dev_params /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/emmc.cfg
++ local src=dev_params
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/emmc.cfg = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/emmc.cfg ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/emmc.cfg = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/emmc.cfg -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/emmc.cfg = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/emmc.cfg ']'
++ echo -n 'copying dev_params(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/emmc.cfg)... '
+copying dev_params(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/emmc.cfg)... + cp -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/BCT/emmc.cfg /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/emmc.cfg
++ chkerr
++ '[' 0 -ne 0 ']'
++ '[' '' = '' ']'
++ echo done.
+done.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' BCTARGS '!=' '' ']'
++ '[' BCTARGS = BINSARGS ']'
++ eval 'BCTARGS+="--dev_params emmc.cfg ";'
+++ BCTARGS+='--dev_params emmc.cfg '
++ return 0
++ '[' 0x18 = 0x19 ']'
++ BINSARGS='--bins "'
++ mkarg mb2_bootloader bootloader/nvtboot_recovery.bin BINSARGS
++ local var=mb2_bootloader
++ local varname=mb2_bootloadername
++ eval mb2_bootloader=bootloader/nvtboot_recovery.bin
+++ mb2_bootloader=bootloader/nvtboot_recovery.bin
++ '[' -f bootloader/nvtboot_recovery.bin ']'
+++ readlink -f bootloader/nvtboot_recovery.bin
++ eval mb2_bootloader=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery.bin
+++ mb2_bootloader=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery.bin
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery.bin
++ eval mb2_bootloadername=nvtboot_recovery.bin
+++ mb2_bootloadername=nvtboot_recovery.bin
++ cp2local mb2_bootloader /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery.bin
++ local src=mb2_bootloader
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery.bin = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery.bin ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery.bin = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery.bin -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery.bin = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery.bin ']'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery.bin
++ local 'sum1=12203    87'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery.bin
++ local 'sum2=12203    87'
++ '[' '12203    87' = '12203    87' ']'
++ echo 'Existing mb2_bootloader(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery.bin) reused.'
+Existing mb2_bootloader(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery.bin) reused.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' BINSARGS '!=' '' ']'
++ '[' BINSARGS = BINSARGS ']'
++ eval 'BINSARGS+="mb2_bootloader nvtboot_recovery.bin; "'
+++ BINSARGS+='mb2_bootloader nvtboot_recovery.bin; '
++ return 0
++ mkarg mts_preboot bootloader/preboot_d15_prod_cr.bin BINSARGS
++ local var=mts_preboot
++ local varname=mts_prebootname
++ eval mts_preboot=bootloader/preboot_d15_prod_cr.bin
+++ mts_preboot=bootloader/preboot_d15_prod_cr.bin
++ '[' -f bootloader/preboot_d15_prod_cr.bin ']'
+++ readlink -f bootloader/preboot_d15_prod_cr.bin
++ eval mts_preboot=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/preboot_d15_prod_cr.bin
+++ mts_preboot=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/preboot_d15_prod_cr.bin
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/preboot_d15_prod_cr.bin
++ eval mts_prebootname=preboot_d15_prod_cr.bin
+++ mts_prebootname=preboot_d15_prod_cr.bin
++ cp2local mts_preboot /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/preboot_d15_prod_cr.bin
++ local src=mts_preboot
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/preboot_d15_prod_cr.bin = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/preboot_d15_prod_cr.bin ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/preboot_d15_prod_cr.bin = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/preboot_d15_prod_cr.bin -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/preboot_d15_prod_cr.bin = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/preboot_d15_prod_cr.bin ']'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/preboot_d15_prod_cr.bin
++ local 'sum1=40034    62'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/preboot_d15_prod_cr.bin
++ local 'sum2=40034    62'
++ '[' '40034    62' = '40034    62' ']'
++ echo 'Existing mts_preboot(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/preboot_d15_prod_cr.bin) reused.'
+Existing mts_preboot(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/preboot_d15_prod_cr.bin) reused.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' BINSARGS '!=' '' ']'
++ '[' BINSARGS = BINSARGS ']'
++ eval 'BINSARGS+="mts_preboot preboot_d15_prod_cr.bin; "'
+++ BINSARGS+='mts_preboot preboot_d15_prod_cr.bin; '
++ return 0
++ '[' 0x18 = 0x19 ']'
++ mkarg mts_bootpack bootloader/mce_mts_d15_prod_cr.bin BINSARGS
++ local var=mts_bootpack
++ local varname=mts_bootpackname
++ eval mts_bootpack=bootloader/mce_mts_d15_prod_cr.bin
+++ mts_bootpack=bootloader/mce_mts_d15_prod_cr.bin
++ '[' -f bootloader/mce_mts_d15_prod_cr.bin ']'
+++ readlink -f bootloader/mce_mts_d15_prod_cr.bin
++ eval mts_bootpack=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mce_mts_d15_prod_cr.bin
+++ mts_bootpack=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mce_mts_d15_prod_cr.bin
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mce_mts_d15_prod_cr.bin
++ eval mts_bootpackname=mce_mts_d15_prod_cr.bin
+++ mts_bootpackname=mce_mts_d15_prod_cr.bin
++ cp2local mts_bootpack /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mce_mts_d15_prod_cr.bin
++ local src=mts_bootpack
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mce_mts_d15_prod_cr.bin = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mce_mts_d15_prod_cr.bin ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mce_mts_d15_prod_cr.bin = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mce_mts_d15_prod_cr.bin -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mce_mts_d15_prod_cr.bin = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mce_mts_d15_prod_cr.bin ']'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mce_mts_d15_prod_cr.bin
++ local 'sum1=30469  2033'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mce_mts_d15_prod_cr.bin
++ local 'sum2=30469  2033'
++ '[' '30469  2033' = '30469  2033' ']'
++ echo 'Existing mts_bootpack(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mce_mts_d15_prod_cr.bin) reused.'
+Existing mts_bootpack(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mce_mts_d15_prod_cr.bin) reused.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' BINSARGS '!=' '' ']'
++ '[' BINSARGS = BINSARGS ']'
++ eval 'BINSARGS+="mts_bootpack mce_mts_d15_prod_cr.bin; "'
+++ BINSARGS+='mts_bootpack mce_mts_d15_prod_cr.bin; '
++ return 0
++ '[' tegra186-quill-p3310-1000-c03-00-base.dtb '!=' '' -a -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/tegra186-quill-p3310-1000-c03-00-base.dtb ']'
++ '[' tegra186-quill-p3310-1000-c03-00-base.dtb '!=' '' -a -f /home/dan/secureboot-tegra/Linux_for_Tegra/kernel/dtb/tegra186-quill-p3310-1000-c03-00-base.dtb ']'
++ bldtb=/home/dan/secureboot-tegra/Linux_for_Tegra/kernel/dtb/tegra186-quill-p3310-1000-c03-00-base.dtb
++ mkarg bootloader_dtb /home/dan/secureboot-tegra/Linux_for_Tegra/kernel/dtb/tegra186-quill-p3310-1000-c03-00-base.dtb BINSARGS
++ local var=bootloader_dtb
++ local varname=bootloader_dtbname
++ eval bootloader_dtb=/home/dan/secureboot-tegra/Linux_for_Tegra/kernel/dtb/tegra186-quill-p3310-1000-c03-00-base.dtb
+++ bootloader_dtb=/home/dan/secureboot-tegra/Linux_for_Tegra/kernel/dtb/tegra186-quill-p3310-1000-c03-00-base.dtb
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/kernel/dtb/tegra186-quill-p3310-1000-c03-00-base.dtb ']'
+++ readlink -f /home/dan/secureboot-tegra/Linux_for_Tegra/kernel/dtb/tegra186-quill-p3310-1000-c03-00-base.dtb
++ eval bootloader_dtb=/home/dan/secureboot-tegra/Linux_for_Tegra/kernel/dtb/tegra186-quill-p3310-1000-c03-00-base.dtb
+++ bootloader_dtb=/home/dan/secureboot-tegra/Linux_for_Tegra/kernel/dtb/tegra186-quill-p3310-1000-c03-00-base.dtb
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/kernel/dtb/tegra186-quill-p3310-1000-c03-00-base.dtb
++ eval bootloader_dtbname=tegra186-quill-p3310-1000-c03-00-base.dtb
+++ bootloader_dtbname=tegra186-quill-p3310-1000-c03-00-base.dtb
++ cp2local bootloader_dtb /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-quill-p3310-1000-c03-00-base.dtb
++ local src=bootloader_dtb
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/kernel/dtb/tegra186-quill-p3310-1000-c03-00-base.dtb = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/kernel/dtb/tegra186-quill-p3310-1000-c03-00-base.dtb ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-quill-p3310-1000-c03-00-base.dtb = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-quill-p3310-1000-c03-00-base.dtb -a /home/dan/secureboot-tegra/Linux_for_Tegra/kernel/dtb/tegra186-quill-p3310-1000-c03-00-base.dtb = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-quill-p3310-1000-c03-00-base.dtb ']'
++ echo -n 'copying bootloader_dtb(/home/dan/secureboot-tegra/Linux_for_Tegra/kernel/dtb/tegra186-quill-p3310-1000-c03-00-base.dtb)... '
+copying bootloader_dtb(/home/dan/secureboot-tegra/Linux_for_Tegra/kernel/dtb/tegra186-quill-p3310-1000-c03-00-base.dtb)... + cp -f /home/dan/secureboot-tegra/Linux_for_Tegra/kernel/dtb/tegra186-quill-p3310-1000-c03-00-base.dtb /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-quill-p3310-1000-c03-00-base.dtb
++ chkerr
++ '[' 0 -ne 0 ']'
++ '[' '' = '' ']'
++ echo done.
+done.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' BINSARGS '!=' '' ']'
++ '[' BINSARGS = BINSARGS ']'
++ eval 'BINSARGS+="bootloader_dtb tegra186-quill-p3310-1000-c03-00-base.dtb; "'
+++ BINSARGS+='bootloader_dtb tegra186-quill-p3310-1000-c03-00-base.dtb; '
++ return 0
++ mkarg bpmp_fw bootloader/bpmp.bin BINSARGS
++ local var=bpmp_fw
++ local varname=bpmp_fwname
++ eval bpmp_fw=bootloader/bpmp.bin
+++ bpmp_fw=bootloader/bpmp.bin
++ '[' -f bootloader/bpmp.bin ']'
+++ readlink -f bootloader/bpmp.bin
++ eval bpmp_fw=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/bpmp.bin
+++ bpmp_fw=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/bpmp.bin
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/bpmp.bin
++ eval bpmp_fwname=bpmp.bin
+++ bpmp_fwname=bpmp.bin
++ cp2local bpmp_fw /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/bpmp.bin
++ local src=bpmp_fw
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/bpmp.bin = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/bpmp.bin ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/bpmp.bin = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/bpmp.bin -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/bpmp.bin = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/bpmp.bin ']'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/bpmp.bin
++ local 'sum1=60571   521'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/bpmp.bin
++ local 'sum2=60571   521'
++ '[' '60571   521' = '60571   521' ']'
++ echo 'Existing bpmp_fw(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/bpmp.bin) reused.'
+Existing bpmp_fw(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/bpmp.bin) reused.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' BINSARGS '!=' '' ']'
++ '[' BINSARGS = BINSARGS ']'
++ eval 'BINSARGS+="bpmp_fw bpmp.bin; "'
+++ BINSARGS+='bpmp_fw bpmp.bin; '
++ return 0
++ mkarg bpmp_fw_dtb /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb BINSARGS
++ local var=bpmp_fw_dtb
++ local varname=bpmp_fw_dtbname
++ eval bpmp_fw_dtb=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb
+++ bpmp_fw_dtb=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb ']'
+++ readlink -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb
++ eval bpmp_fw_dtb=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb
+++ bpmp_fw_dtb=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb
++ eval bpmp_fw_dtbname=tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb
+++ bpmp_fw_dtbname=tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb
++ cp2local bpmp_fw_dtb /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb
++ local src=bpmp_fw_dtb
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb ']'
++ echo -n 'copying bpmp_fw_dtb(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb)... '
+copying bpmp_fw_dtb(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb)... + cp -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb
++ chkerr
++ '[' 0 -ne 0 ']'
++ '[' '' = '' ']'
++ echo done.
+done.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' BINSARGS '!=' '' ']'
++ '[' BINSARGS = BINSARGS ']'
++ eval 'BINSARGS+="bpmp_fw_dtb tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb; "'
+++ BINSARGS+='bpmp_fw_dtb tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb; '
++ return 0
++ mkarg tlk bootloader/tos.img BINSARGS
++ local var=tlk
++ local varname=tlkname
++ eval tlk=bootloader/tos.img
+++ tlk=bootloader/tos.img
++ '[' -f bootloader/tos.img ']'
+++ readlink -f bootloader/tos.img
++ eval tlk=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tos-trusty.img
+++ tlk=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tos-trusty.img
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tos-trusty.img
++ eval tlkname=tos-trusty.img
+++ tlkname=tos-trusty.img
++ cp2local tlk /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tos-trusty.img
++ local src=tlk
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tos-trusty.img = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tos-trusty.img ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tos-trusty.img = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tos-trusty.img -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tos-trusty.img = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tos-trusty.img ']'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tos-trusty.img
++ local 'sum1=21125   306'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tos-trusty.img
++ local 'sum2=21125   306'
++ '[' '21125   306' = '21125   306' ']'
++ echo 'Existing tlk(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tos-trusty.img) reused.'
+Existing tlk(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/tos-trusty.img) reused.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' BINSARGS '!=' '' ']'
++ '[' BINSARGS = BINSARGS ']'
++ eval 'BINSARGS+="tlk tos-trusty.img; "'
+++ BINSARGS+='tlk tos-trusty.img; '
++ return 0
++ mkarg eks bootloader/eks.img BINSARGS
++ local var=eks
++ local varname=eksname
++ eval eks=bootloader/eks.img
+++ eks=bootloader/eks.img
++ '[' -f bootloader/eks.img ']'
+++ readlink -f bootloader/eks.img
++ eval eks=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/eks.img
+++ eks=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/eks.img
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/eks.img
++ eval eksname=eks.img
+++ eksname=eks.img
++ cp2local eks /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/eks.img
++ local src=eks
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/eks.img = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/eks.img ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/eks.img = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/eks.img -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/eks.img = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/eks.img ']'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/eks.img
++ local 'sum1=43023     2'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/eks.img
++ local 'sum2=43023     2'
++ '[' '43023     2' = '43023     2' ']'
++ echo 'Existing eks(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/eks.img) reused.'
+Existing eks(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/eks.img) reused.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' BINSARGS '!=' '' ']'
++ '[' BINSARGS = BINSARGS ']'
++ eval 'BINSARGS+="eks eks.img; "'
+++ BINSARGS+='eks eks.img; '
++ return 0
++ '[' 0x18 = 0x19 ']'
++ BINSARGS+='"'
++ BINSCONV+='-e s/"[[:space:]]*/"/ '
++ BINSCONV+='-e s/\;[[:space:]]*"/"/ '
+++ echo '--bins "mb2_bootloader nvtboot_recovery.bin; mts_preboot preboot_d15_prod_cr.bin; mts_bootpack mce_mts_d15_prod_cr.bin; bootloader_dtb tegra186-quill-p3310-1000-c03-00-base.dtb; bpmp_fw bpmp.bin; bpmp_fw_dtb tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb; tlk tos-trusty.img; eks eks.img; "'
+++ sed -e 's/"[[:space:]]*/"/' -e 's/\;[[:space:]]*"/"/'
++ BINSARGS='--bins "mb2_bootloader nvtboot_recovery.bin; mts_preboot preboot_d15_prod_cr.bin; mts_bootpack mce_mts_d15_prod_cr.bin; bootloader_dtb tegra186-quill-p3310-1000-c03-00-base.dtb; bpmp_fw bpmp.bin; bpmp_fw_dtb tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb; tlk tos-trusty.img; eks eks.img"'
++ FUSEARGS+='--sdram_config P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg --misc_config tegra186-mb1-bct-misc-si-l4t.cfg --pinmux_config tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg --scr_config minimal_scr.cfg --scr_cold_boot_config mobile_scr.cfg --pmc_config tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg --pmic_config tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg --br_cmd_config tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg --prod_config tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg --dev_params emmc.cfg  --bins "mb2_bootloader nvtboot_recovery.bin; mts_preboot preboot_d15_prod_cr.bin; mts_bootpack mce_mts_d15_prod_cr.bin; bootloader_dtb tegra186-quill-p3310-1000-c03-00-base.dtb; bpmp_fw bpmp.bin; bpmp_fw_dtb tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb; tlk tos-trusty.img; eks eks.img" '
++ localcfg=flash.xml
++ cpcfg /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/cfg/flash_l4t_t186.xml /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml
++ local CFGCONV=
++ mkarg mb1file bootloader/mb1_prod.bin ''
++ local var=mb1file
++ local varname=mb1filename
++ eval mb1file=bootloader/mb1_prod.bin
+++ mb1file=bootloader/mb1_prod.bin
++ '[' -f bootloader/mb1_prod.bin ']'
+++ readlink -f bootloader/mb1_prod.bin
++ eval mb1file=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_prod.bin
+++ mb1file=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_prod.bin
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_prod.bin
++ eval mb1filename=mb1_prod.bin
+++ mb1filename=mb1_prod.bin
++ cp2local mb1file /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_prod.bin
++ local src=mb1file
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_prod.bin = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_prod.bin ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_prod.bin = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_prod.bin -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_prod.bin = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_prod.bin ']'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_prod.bin
++ local 'sum1=02523    98'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_prod.bin
++ local 'sum2=02523    98'
++ '[' '02523    98' = '02523    98' ']'
++ echo 'Existing mb1file(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_prod.bin) reused.'
+Existing mb1file(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_prod.bin) reused.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' '' '!=' '' ']'
++ return 0
++ CFGCONV+='-e s/MB1NAME/mb1/ '
++ CFGCONV+='-e s/MB1TYPE/mb1_bootloader/ '
++ CFGCONV+='-e s/MB1FILE/mb1_prod.bin/ '
++ '[' '' = '' ']'
++ SPEFILE=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin
++ mkarg spefile /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin ''
++ local var=spefile
++ local varname=spefilename
++ eval spefile=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin
+++ spefile=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin ']'
+++ readlink -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin
++ eval spefile=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin
+++ spefile=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin
++ eval spefilename=spe.bin
+++ spefilename=spe.bin
++ cp2local spefile /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin
++ local src=spefile
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin ']'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin
++ local 'sum1=08148    94'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin
++ local 'sum2=08148    94'
++ '[' '08148    94' = '08148    94' ']'
++ echo 'Existing spefile(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin) reused.'
+Existing spefile(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/spe.bin) reused.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' '' '!=' '' ']'
++ return 0
++ CFGCONV+='-e s/SPENAME/spe-fw/ '
++ CFGCONV+='-e s/SPETYPE/spe_fw/ '
++ CFGCONV+='-e s/SPEFILE/spe.bin/ '
++ mkarg tegraboot bootloader/t186ref/nvtboot.bin ''
++ local var=tegraboot
++ local varname=tegrabootname
++ eval tegraboot=bootloader/t186ref/nvtboot.bin
+++ tegraboot=bootloader/t186ref/nvtboot.bin
++ '[' -f bootloader/t186ref/nvtboot.bin ']'
+++ readlink -f bootloader/t186ref/nvtboot.bin
++ eval tegraboot=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/nvtboot.bin
+++ tegraboot=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/nvtboot.bin
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/nvtboot.bin
++ eval tegrabootname=nvtboot.bin
+++ tegrabootname=nvtboot.bin
++ cp2local tegraboot /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot.bin
++ local src=tegraboot
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/nvtboot.bin = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/nvtboot.bin ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot.bin = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot.bin -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/nvtboot.bin = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot.bin ']'
++ echo -n 'copying tegraboot(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/nvtboot.bin)... '
+copying tegraboot(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/nvtboot.bin)... + cp -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/nvtboot.bin /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot.bin
++ chkerr
++ '[' 0 -ne 0 ']'
++ '[' '' = '' ']'
++ echo done.
+done.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' '' '!=' '' ']'
++ return 0
++ CFGCONV+='-e s/MB2NAME/mb2/ '
++ CFGCONV+='-e s/MB2TYPE/mb2_bootloader/ '
++ CFGCONV+='-e s/MB2FILE/nvtboot.bin/ '
++ CFGCONV+='-e s/TEGRABOOT/nvtboot.bin/ '
++ CFGCONV+='-e s/MPBNAME/mts-preboot/ '
++ CFGCONV+='-e s/MPBTYPE/mts_preboot/ '
++ CFGCONV+='-e s/MPBFILE/preboot_d15_prod_cr.bin/ '
++ CFGCONV+='-e s/MTSPREBOOT/preboot_d15_prod_cr.bin/ '
++ CFGCONV+='-e s/PPTSIZE/16896/ '
++ getsize rootfssize ROOTFSSIZE
++ local var=rootfssize
++ local val=ROOTFSSIZE
++ [[ 28GiB != *[!0-9]* ]]
++ [[ 28GiB == *KiB ]]
++ [[ 28GiB == *MiB ]]
++ [[ 28GiB == *GiB ]]
++ [[ 28GiB != *[!0-9]*GiB ]]
++ eval rootfssize=30064771072
+++ rootfssize=30064771072
++ localsysfile=system.img
++ echo 'This is dummy RootFS'
++ CFGCONV+='-e s/APPSIZE/30064771072/ '
++ CFGCONV+='-e s/APPFILE/system.img/ '
++ '[' 0x18 = 0x19 ']'
++ CFGCONV+='-e s/MBPNAME/mts-bootpack/ '
++ CFGCONV+='-e s/MBPTYPE/mts_bootpack/ '
++ CFGCONV+='-e s/MBPFILE/mce_mts_d15_prod_cr.bin/ '
++ mkarg tbcfile bootloader/cboot.bin ''
++ local var=tbcfile
++ local varname=tbcfilename
++ eval tbcfile=bootloader/cboot.bin
+++ tbcfile=bootloader/cboot.bin
++ '[' -f bootloader/cboot.bin ']'
+++ readlink -f bootloader/cboot.bin
++ eval tbcfile=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/cboot.bin
+++ tbcfile=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/cboot.bin
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/cboot.bin
++ eval tbcfilename=cboot.bin
+++ tbcfilename=cboot.bin
++ cp2local tbcfile /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/cboot.bin
++ local src=tbcfile
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/cboot.bin = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/cboot.bin ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/cboot.bin = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/cboot.bin -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/cboot.bin = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/cboot.bin ']'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/cboot.bin
++ local 'sum1=55173   272'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/cboot.bin
++ local 'sum2=55173   272'
++ '[' '55173   272' = '55173   272' ']'
++ echo 'Existing tbcfile(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/cboot.bin) reused.'
+Existing tbcfile(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/cboot.bin) reused.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' '' '!=' '' ']'
++ return 0
++ CFGCONV+='-e s/TBCNAME/cpu-bootloader/ '
++ CFGCONV+='-e s/TBCTYPE/bootloader/ '
++ CFGCONV+='-e s/TBCFILE/cboot.bin/ '
++ CFGCONV+='-e s/TBCDTB-NAME/bootloader-dtb/ '
++ CFGCONV+='-e s/TBCDTB-FILE/tegra186-quill-p3310-1000-c03-00-base.dtb/ '
++ CFGCONV+='-e s/TOSNAME/secure-os/ '
++ CFGCONV+='-e s/TOSFILE/tos-trusty.img/ '
++ CFGCONV+='-e s/EKSFILE/eks.img/ '
++ CFGCONV+='-e s/BPFNAME/bpmp-fw/ '
++ CFGCONV+='-e s/BPFSIGN/true/ '
++ CFGCONV+='-e s/BPFFILE/bpmp.bin/ '
++ '[' 0x18 = 0x19 ']'
++ CFGCONV+='-e s/BPFDTB-NAME/bpmp-fw-dtb/ '
++ CFGCONV+='-e s/BPMPDTB-SIGN/true/ '
++ CFGCONV+='-e s/BPFDTB-FILE/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb/ '
++ '[' '' = '' -o '!' -f '' ']'
++ SCEFILE=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img
++ mkarg scefile /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img ''
++ local var=scefile
++ local varname=scefilename
++ eval scefile=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img
+++ scefile=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img ']'
+++ readlink -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img
++ eval scefile=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img
+++ scefile=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img
++ eval scefilename=camera-rtcpu-sce.img
+++ scefilename=camera-rtcpu-sce.img
++ cp2local scefile /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img
++ local src=scefile
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img ']'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img
++ local 'sum1=37114   123'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img
++ local 'sum2=37114   123'
++ '[' '37114   123' = '37114   123' ']'
++ echo 'Existing scefile(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img) reused.'
+Existing scefile(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/camera-rtcpu-sce.img) reused.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' '' '!=' '' ']'
++ return 0
++ CFGCONV+='-e s/SCENAME/sce-fw/ '
++ CFGCONV+='-e s/SCESIGN/true/ '
++ CFGCONV+='-e s/SCEFILE/camera-rtcpu-sce.img/ '
++ '[' '' '!=' '' -a -f '' ']'
++ CFGCONV+='-e /CAMERAFW/d '
++ '[' '' '!=' '' ']'
++ CFGCONF+='-e s/SPETYPE/data/ '
++ CFGCONF+='-e /SPEFILE/d '
++ mkarg wb0boot bootloader/t186ref/warmboot.bin ''
++ local var=wb0boot
++ local varname=wb0bootname
++ eval wb0boot=bootloader/t186ref/warmboot.bin
+++ wb0boot=bootloader/t186ref/warmboot.bin
++ '[' -f bootloader/t186ref/warmboot.bin ']'
+++ readlink -f bootloader/t186ref/warmboot.bin
++ eval wb0boot=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/warmboot.bin
+++ wb0boot=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/warmboot.bin
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/warmboot.bin
++ eval wb0bootname=warmboot.bin
+++ wb0bootname=warmboot.bin
++ cp2local wb0boot /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/warmboot.bin
++ local src=wb0boot
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/warmboot.bin = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/warmboot.bin ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/warmboot.bin = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/warmboot.bin -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/warmboot.bin = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/warmboot.bin ']'
++ echo -n 'copying wb0boot(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/warmboot.bin)... '
+copying wb0boot(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/warmboot.bin)... + cp -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/warmboot.bin /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/warmboot.bin
++ chkerr
++ '[' 0 -ne 0 ']'
++ '[' '' = '' ']'
++ echo done.
+done.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' '' '!=' '' ']'
++ return 0
++ CFGCONV+='-e s/SC7NAME/sc7/ '
++ CFGCONV+='-e s/WB0TYPE/WB0/ '
++ CFGCONV+='-e s/WB0FILE/warmboot.bin/ '
++ CFGCONV+='-e s/WB0BOOT/warmboot.bin/ '
++ CFGCONV+='-e s/FBTYPE/data/ '
++ CFGCONV+='-e s/FBSIGN/false/ '
++ CFGCONV+='-e /FBFILE/d '
++ CFGCONV+='-e /SOSFILE/d '
++ localbootfile=boot.img
++ echo 'This is dummy Kernel'
++ CFGCONV+='-e s/LNXNAME/kernel/ '
++ CFGCONV+='-e s/LNXSIZE/67108864/ '
++ CFGCONV+='-e s/LNXFILE/boot.img/ '
++ mkarg kernel_dtbfile tegra186-quill-p3310-1000-c03-00-base.dtb ''
++ local var=kernel_dtbfile
++ local varname=kernel_dtbfilename
++ eval kernel_dtbfile=tegra186-quill-p3310-1000-c03-00-base.dtb
+++ kernel_dtbfile=tegra186-quill-p3310-1000-c03-00-base.dtb
++ '[' -f tegra186-quill-p3310-1000-c03-00-base.dtb ']'
++ eval kernel_dtbfilename=tegra186-quill-p3310-1000-c03-00-base.dtb
+++ kernel_dtbfilename=tegra186-quill-p3310-1000-c03-00-base.dtb
++ '[' '' '!=' '' ']'
++ return 0
++ CFGCONV+='-e s/KERNELDTB-NAME/kernel-dtb/ '
++ CFGCONV+='-e s/KERNELDTB-FILE/tegra186-quill-p3310-1000-c03-00-base.dtb/ '
++ CFGCONV+='-e s/DTB_FILE/tegra186-quill-p3310-1000-c03-00-base.dtb/ '
++ '[' '' '!=' '' -a -f '' ']'
++ CFGCONV+='-e s/DRAMECCTYPE/data/ '
++ CFGCONV+='-e /DRAMECCFILE/d '
++ '[' '' '!=' '' -a -f '' ']'
++ CFGCONV+='-e s/BADPAGETYPE/data/ '
++ CFGCONV+='-e /BADPAGEFILE/d '
++ '[' '' '!=' '' -a -f '' ']'
++ CFGCONV+='-e /CBOOTOPTION_FILE/d '
++ cat /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/t186ref/cfg/flash_l4t_t186.xml
++ sed -e s/MB1NAME/mb1/ -e s/MB1TYPE/mb1_bootloader/ -e s/MB1FILE/mb1_prod.bin/ -e s/SPENAME/spe-fw/ -e s/SPETYPE/spe_fw/ -e s/SPEFILE/spe.bin/ -e s/MB2NAME/mb2/ -e s/MB2TYPE/mb2_bootloader/ -e s/MB2FILE/nvtboot.bin/ -e s/TEGRABOOT/nvtboot.bin/ -e s/MPBNAME/mts-preboot/ -e s/MPBTYPE/mts_preboot/ -e s/MPBFILE/preboot_d15_prod_cr.bin/ -e s/MTSPREBOOT/preboot_d15_prod_cr.bin/ -e s/PPTSIZE/16896/ -e s/APPSIZE/30064771072/ -e s/APPFILE/system.img/ -e s/MBPNAME/mts-bootpack/ -e s/MBPTYPE/mts_bootpack/ -e s/MBPFILE/mce_mts_d15_prod_cr.bin/ -e s/TBCNAME/cpu-bootloader/ -e s/TBCTYPE/bootloader/ -e s/TBCFILE/cboot.bin/ -e s/TBCDTB-NAME/bootloader-dtb/ -e s/TBCDTB-FILE/tegra186-quill-p3310-1000-c03-00-base.dtb/ -e s/TOSNAME/secure-os/ -e s/TOSFILE/tos-trusty.img/ -e s/EKSFILE/eks.img/ -e s/BPFNAME/bpmp-fw/ -e s/BPFSIGN/true/ -e s/BPFFILE/bpmp.bin/ -e s/BPFDTB-NAME/bpmp-fw-dtb/ -e s/BPMPDTB-SIGN/true/ -e s/BPFDTB-FILE/tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb/ -e s/SCENAME/sce-fw/ -e s/SCESIGN/true/ -e s/SCEFILE/camera-rtcpu-sce.img/ -e /CAMERAFW/d -e s/SC7NAME/sc7/ -e s/WB0TYPE/WB0/ -e s/WB0FILE/warmboot.bin/ -e s/WB0BOOT/warmboot.bin/ -e s/FBTYPE/data/ -e s/FBSIGN/false/ -e /FBFILE/d -e /SOSFILE/d -e s/LNXNAME/kernel/ -e s/LNXSIZE/67108864/ -e s/LNXFILE/boot.img/ -e s/KERNELDTB-NAME/kernel-dtb/ -e s/KERNELDTB-FILE/tegra186-quill-p3310-1000-c03-00-base.dtb/ -e s/DTB_FILE/tegra186-quill-p3310-1000-c03-00-base.dtb/ -e s/DRAMECCTYPE/data/ -e /DRAMECCFILE/d -e s/BADPAGETYPE/data/ -e /BADPAGEFILE/d -e /CBOOTOPTION_FILE/d
++ chkerr
++ '[' 0 -ne 0 ']'
++ '[' '' = '' ']'
++ echo done.
+done.
++ mkarg cfg /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml FUSEARGS
++ local var=cfg
++ local varname=cfgname
++ eval cfg=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml
+++ cfg=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml ']'
+++ readlink -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml
++ eval cfg=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml
+++ cfg=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml
++ eval cfgname=flash.xml
+++ cfgname=flash.xml
++ cp2local cfg /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml
++ local src=cfg
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml ']'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml
++ local 'sum1=28659    23'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml
++ local 'sum2=28659    23'
++ '[' '28659    23' = '28659    23' ']'
++ echo 'Existing cfg(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml) reused.'
+Existing cfg(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/flash.xml) reused.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' FUSEARGS '!=' '' ']'
++ '[' FUSEARGS = BINSARGS ']'
++ eval 'FUSEARGS+="--cfg flash.xml ";'
+++ FUSEARGS+='--cfg flash.xml '
++ return 0
++ mkarg bl bootloader/nvtboot_recovery_cpu.bin FUSEARGS
++ local var=bl
++ local varname=blname
++ eval bl=bootloader/nvtboot_recovery_cpu.bin
+++ bl=bootloader/nvtboot_recovery_cpu.bin
++ '[' -f bootloader/nvtboot_recovery_cpu.bin ']'
+++ readlink -f bootloader/nvtboot_recovery_cpu.bin
++ eval bl=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery_cpu.bin
+++ bl=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery_cpu.bin
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery_cpu.bin
++ eval blname=nvtboot_recovery_cpu.bin
+++ blname=nvtboot_recovery_cpu.bin
++ cp2local bl /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery_cpu.bin
++ local src=bl
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery_cpu.bin = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery_cpu.bin ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery_cpu.bin = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery_cpu.bin -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery_cpu.bin = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery_cpu.bin ']'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery_cpu.bin
++ local 'sum1=12040   199'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery_cpu.bin
++ local 'sum2=12040   199'
++ '[' '12040   199' = '12040   199' ']'
++ echo 'Existing bl(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery_cpu.bin) reused.'
+Existing bl(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/nvtboot_recovery_cpu.bin) reused.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' FUSEARGS '!=' '' ']'
++ '[' FUSEARGS = BINSARGS ']'
++ eval 'FUSEARGS+="--bl nvtboot_recovery_cpu.bin ";'
+++ FUSEARGS+='--bl nvtboot_recovery_cpu.bin '
++ return 0
++ '[' 0x1090000 = '' ']'
++ mkarg odmdata 0x1090000 FUSEARGS
++ local var=odmdata
++ local varname=odmdataname
++ eval odmdata=0x1090000
+++ odmdata=0x1090000
++ '[' -f 0x1090000 ']'
++ eval odmdataname=0x1090000
+++ odmdataname=0x1090000
++ '[' FUSEARGS '!=' '' ']'
++ '[' FUSEARGS = BINSARGS ']'
++ eval 'FUSEARGS+="--odmdata 0x1090000 ";'
+++ FUSEARGS+='--odmdata 0x1090000 '
++ return 0
++ mkarg chip 0x18 FUSEARGS
++ local var=chip
++ local varname=chipname
++ eval chip=0x18
+++ chip=0x18
++ '[' -f 0x18 ']'
++ eval chipname=0x18
+++ chipname=0x18
++ '[' FUSEARGS '!=' '' ']'
++ '[' FUSEARGS = BINSARGS ']'
++ eval 'FUSEARGS+="--chip 0x18 ";'
+++ FUSEARGS+='--chip 0x18 '
++ return 0
++ mkarg applet bootloader/mb1_recovery_prod.bin FUSEARGS
++ local var=applet
++ local varname=appletname
++ eval applet=bootloader/mb1_recovery_prod.bin
+++ applet=bootloader/mb1_recovery_prod.bin
++ '[' -f bootloader/mb1_recovery_prod.bin ']'
+++ readlink -f bootloader/mb1_recovery_prod.bin
++ eval applet=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin
+++ applet=/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin
+++ basename /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin
++ eval appletname=mb1_recovery_prod.bin
+++ appletname=mb1_recovery_prod.bin
++ cp2local applet /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin
++ local src=applet
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin = '' ']'
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin ']'
++ '[' /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin = '' ']'
++ '[' -f /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin -a /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin = /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin ']'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin
++ local 'sum1=22935   111'
+++ sum /home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin
++ local 'sum2=22935   111'
++ '[' '22935   111' = '22935   111' ']'
++ echo 'Existing applet(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin) reused.'
+Existing applet(/home/dan/secureboot-tegra/Linux_for_Tegra/bootloader/mb1_recovery_prod.bin) reused.
++ return 0
++ '[' 0 -ne 0 ']'
++ '[' FUSEARGS '!=' '' ']'
++ '[' FUSEARGS = BINSARGS ']'
++ eval 'FUSEARGS+="--applet mb1_recovery_prod.bin ";'
+++ FUSEARGS+='--applet mb1_recovery_prod.bin '
++ return 0
++ export PATH=/home/dan/secureboot-tegra/Linux_for_Tegra/pkc:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/home/dan/n/bin
++ PATH=/home/dan/secureboot-tegra/Linux_for_Tegra/pkc:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/home/dan/n/bin
++ '[' '!' -f /home/dan/secureboot-tegra/Linux_for_Tegra/pkc/sha2_key ']'
++ USEOPENSSL=yes
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' ../rsa_priv.pem '!=' '' ']'
++ '[' '!' -f ../rsa_priv.pem ']'
+++ readlink -f ../rsa_priv.pem
++ KEYFILE=/home/dan/secureboot-tegra/rsa_priv.pem
++ pkcopt+='-k /home/dan/secureboot-tegra/rsa_priv.pem '
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' PKC = '' ']'
++ '[' PKC '!=' NS -a PKC '!=' PKC ']'
++ '[' /home/dan/secureboot-tegra/rsa_priv.pem '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' PKC = NS ']'
++ pushd bootloader
++ '[' '' '!=' '' ']'
++ '[' PKC = PKC ']'
++ use_hash=0
++ '[' -f /home/dan/secureboot-tegra/rsa_priv.pem ']'
++ echo -n '*** Calculating HASH from keyfile /home/dan/secureboot-tegra/rsa_priv.pem ... '
+*** Calculating HASH from keyfile /home/dan/secureboot-tegra/rsa_priv.pem ... + '[' 0 -ne 1 ']'
+++ mkpkc -i 0x18 -f PKC -k /home/dan/secureboot-tegra/rsa_priv.pem genkey
++ hash='HASH: 0xfdd32b8c6256163b888d177fc15707605e55bb8c5c4f0a8aec4209724789c06e'
++ '[' 0 -ne 0 ']'
++ [[ HASH: 0xfdd32b8c6256163b888d177fc15707605e55bb8c5c4f0a8aec4209724789c06e =~ ^Error:[^@]{1,}$ ]]
++ [[ HASH: 0xfdd32b8c6256163b888d177fc15707605e55bb8c5c4f0a8aec4209724789c06e =~ ^HASH:[ ] ]]
++ hash=0xfdd32b8c6256163b888d177fc15707605e55bb8c5c4f0a8aec4209724789c06e
++ behash=0xfdd32b8c6256163b888d177fc15707605e55bb8c5c4f0a8aec4209724789c06e
++ echo done
+done
++ convhash behash 32
++ local le=
++ local be=
++ local keyname=behash
++ local keylen=32
++ local keystr=0xfdd32b8c6256163b888d177fc15707605e55bb8c5c4f0a8aec4209724789c06e
++ '[' 0x18 = 0x40 ']'
++ [[ 0xfdd32b8c6256163b888d177fc15707605e55bb8c5c4f0a8aec4209724789c06e =~ ^0[xX] ]]
++ le=fdd32b8c6256163b888d177fc15707605e55bb8c5c4f0a8aec4209724789c06e
++ local i=64
++ '[' 64 -gt 0 ']'
++ i=62
++ be+=6e
++ '[' 62 -gt 0 ']'
++ i=60
++ be+=c0
++ '[' 60 -gt 0 ']'
++ i=58
++ be+=89
++ '[' 58 -gt 0 ']'
++ i=56
++ be+=47
++ '[' 56 -gt 0 ']'
++ i=54
++ be+=72
++ '[' 54 -gt 0 ']'
++ i=52
++ be+=09
++ '[' 52 -gt 0 ']'
++ i=50
++ be+=42
++ '[' 50 -gt 0 ']'
++ i=48
++ be+=ec
++ '[' 48 -gt 0 ']'
++ i=46
++ be+=8a
++ '[' 46 -gt 0 ']'
++ i=44
++ be+=0a
++ '[' 44 -gt 0 ']'
++ i=42
++ be+=4f
++ '[' 42 -gt 0 ']'
++ i=40
++ be+=5c
++ '[' 40 -gt 0 ']'
++ i=38
++ be+=8c
++ '[' 38 -gt 0 ']'
++ i=36
++ be+=bb
++ '[' 36 -gt 0 ']'
++ i=34
++ be+=55
++ '[' 34 -gt 0 ']'
++ i=32
++ be+=5e
++ '[' 32 -gt 0 ']'
++ i=30
++ be+=60
++ '[' 30 -gt 0 ']'
++ i=28
++ be+=07
++ '[' 28 -gt 0 ']'
++ i=26
++ be+=57
++ '[' 26 -gt 0 ']'
++ i=24
++ be+=c1
++ '[' 24 -gt 0 ']'
++ i=22
++ be+=7f
++ '[' 22 -gt 0 ']'
++ i=20
++ be+=17
++ '[' 20 -gt 0 ']'
++ i=18
++ be+=8d
++ '[' 18 -gt 0 ']'
++ i=16
++ be+=88
++ '[' 16 -gt 0 ']'
++ i=14
++ be+=3b
++ '[' 14 -gt 0 ']'
++ i=12
++ be+=16
++ '[' 12 -gt 0 ']'
++ i=10
++ be+=56
++ '[' 10 -gt 0 ']'
++ i=8
++ be+=62
++ '[' 8 -gt 0 ']'
++ i=6
++ be+=8c
++ '[' 6 -gt 0 ']'
++ i=4
++ be+=2b
++ '[' 4 -gt 0 ']'
++ i=2
++ be+=d3
++ '[' 2 -gt 0 ']'
++ i=0
++ be+=fd
++ '[' 0 -gt 0 ']'
++ eval 'behash=0x"6ec08947720942ec8a0a4f5c8cbb555e600757c17f178d883b1656628c2bd3fd"'
+++ behash=0x6ec08947720942ec8a0a4f5c8cbb555e600757c17f178d883b1656628c2bd3fd
++ echo 'PKC HASH: 0x6ec08947720942ec8a0a4f5c8cbb555e600757c17f178d883b1656628c2bd3fd'
+PKC HASH: 0x6ec08947720942ec8a0a4f5c8cbb555e600757c17f178d883b1656628c2bd3fd
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ echo -n '*** Generating fuse configuration ... '
+*** Generating fuse configuration ... + '[' PKC = NS ']'
++ '[' PKC = PKC ']'
++ '[' 0x18 = 0x40 ']'
++ '[' 0x18 = 0x21 -o 0x18 = 0x18 -o 0x18 = 0x19 ']'
++ fusecfg=odmfuse_pkc.xml
++ fusename=PublicKeyHash
++ fusesize=32
++ fuseval=0xfdd32b8c6256163b888d177fc15707605e55bb8c5c4f0a8aec4209724789c06e
++ echo done.
+done.
++ rm -f odmfuse_pkc.xml
++ '[' 0x18 = 0x40 ']'
++ '[' 0x18 = 0x21 -o 0x18 = 0x18 -o 0x18 = 0x19 ']'
++ magicid=0x46555345
++ '[' 0x18 = 0x18 -o 0x18 = 0x19 ']'
++ magicid=0x45535546
++ echo -n '<genericfuse '
++ echo 'MagicId="0x45535546" version="1.0.0">'
++ '[' '' '!=' '' ']'
++ '[' no = yes ']'
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' '' '!=' '' ']'
++ '[' PublicKeyHash '!=' '' -a 0xfdd32b8c6256163b888d177fc15707605e55bb8c5c4f0a8aec4209724789c06e '!=' '' ']'
++ echo -n '<fuse name="PublicKeyHash" '
++ echo -n 'size="32" '
++ echo 'value="0xfdd32b8c6256163b888d177fc15707605e55bb8c5c4f0a8aec4209724789c06e" />'
++ fusecnt=1
++ '[' 0x18 = 0x18 ']'
++ echo -n '<fuse name='
++ echo -n '"BootSecurityInfo" '
++ '[' '' '!=' '' ']'
++ bsi=0x2
++ echo 'size="4" value="0x2" />'
++ fusecnt=2
++ '[' yes '!=' '' ']'
++ '[' 0x18 = 0x21 -o 0x18 = 0x18 -o 0x18 = 0x19 ']'
++ echo -n '<fuse name="SecurityMode" '
++ echo 'size="4" value="0x1" />'
++ fusecnt=3
++ echo '</genericfuse>'
++ echo done.
+done.
++ '[' 3 -eq 0 ']'
++ '[' 0x18 = 0x40 ']'
++ '[' 0x18 = 0x21 ']'
++ '[' 0x18 = 0x18 -o 0x18 = 0x19 ']'
++ fcmd='./tegraflash.py --sdram_config P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg --misc_config tegra186-mb1-bct-misc-si-l4t.cfg --pinmux_config tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg --scr_config minimal_scr.cfg --scr_cold_boot_config mobile_scr.cfg --pmc_config tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg --pmic_config tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg --br_cmd_config tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg --prod_config tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg --dev_params emmc.cfg  --bins "mb2_bootloader nvtboot_recovery.bin; mts_preboot preboot_d15_prod_cr.bin; mts_bootpack mce_mts_d15_prod_cr.bin; bootloader_dtb tegra186-quill-p3310-1000-c03-00-base.dtb; bpmp_fw bpmp.bin; bpmp_fw_dtb tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb; tlk tos-trusty.img; eks eks.img" --cfg flash.xml --bl nvtboot_recovery_cpu.bin --odmdata 0x1090000 --chip 0x18 --applet mb1_recovery_prod.bin  '
++ fcmd+='--cmd "burnfuses odmfuse_pkc.xml"'
++ '[' 0 -eq 1 ']'
++ '[' 0x18 = 0x19 ']'
++ echo '*** Start fusing  ... '
+*** Start fusing  ...
++ echo './tegraflash.py --sdram_config P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg --misc_config tegra186-mb1-bct-misc-si-l4t.cfg --pinmux_config tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg --scr_config minimal_scr.cfg --scr_cold_boot_config mobile_scr.cfg --pmc_config tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg --pmic_config tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg --br_cmd_config tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg --prod_config tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg --dev_params emmc.cfg  --bins "mb2_bootloader nvtboot_recovery.bin; mts_preboot preboot_d15_prod_cr.bin; mts_bootpack mce_mts_d15_prod_cr.bin; bootloader_dtb tegra186-quill-p3310-1000-c03-00-base.dtb; bpmp_fw bpmp.bin; bpmp_fw_dtb tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb; tlk tos-trusty.img; eks eks.img" --cfg flash.xml --bl nvtboot_recovery_cpu.bin --odmdata 0x1090000 --chip 0x18 --applet mb1_recovery_prod.bin  --cmd "burnfuses odmfuse_pkc.xml"'
+./tegraflash.py --sdram_config P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg --misc_config tegra186-mb1-bct-misc-si-l4t.cfg --pinmux_config tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg --scr_config minimal_scr.cfg --scr_cold_boot_config mobile_scr.cfg --pmc_config tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg --pmic_config tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg --br_cmd_config tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg --prod_config tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg --dev_params emmc.cfg  --bins "mb2_bootloader nvtboot_recovery.bin; mts_preboot preboot_d15_prod_cr.bin; mts_bootpack mce_mts_d15_prod_cr.bin; bootloader_dtb tegra186-quill-p3310-1000-c03-00-base.dtb; bpmp_fw bpmp.bin; bpmp_fw_dtb tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb; tlk tos-trusty.img; eks eks.img" --cfg flash.xml --bl nvtboot_recovery_cpu.bin --odmdata 0x1090000 --chip 0x18 --applet mb1_recovery_prod.bin  --cmd "burnfuses odmfuse_pkc.xml"
++ eval ./tegraflash.py --sdram_config P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg --misc_config tegra186-mb1-bct-misc-si-l4t.cfg --pinmux_config tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg --scr_config minimal_scr.cfg --scr_cold_boot_config mobile_scr.cfg --pmc_config tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg --pmic_config tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg --br_cmd_config tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg --prod_config tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg --dev_params emmc.cfg --bins '"mb2_bootloader' 'nvtboot_recovery.bin;' mts_preboot 'preboot_d15_prod_cr.bin;' mts_bootpack 'mce_mts_d15_prod_cr.bin;' bootloader_dtb 'tegra186-quill-p3310-1000-c03-00-base.dtb;' bpmp_fw 'bpmp.bin;' bpmp_fw_dtb 'tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb;' tlk 'tos-trusty.img;' eks 'eks.img"' --cfg flash.xml --bl nvtboot_recovery_cpu.bin --odmdata 0x1090000 --chip 0x18 --applet mb1_recovery_prod.bin --cmd '"burnfuses' 'odmfuse_pkc.xml"'
+++ ./tegraflash.py --sdram_config P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg --misc_config tegra186-mb1-bct-misc-si-l4t.cfg --pinmux_config tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg --scr_config minimal_scr.cfg --scr_cold_boot_config mobile_scr.cfg --pmc_config tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg --pmic_config tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg --br_cmd_config tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg --prod_config tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg --dev_params emmc.cfg --bins 'mb2_bootloader nvtboot_recovery.bin; mts_preboot preboot_d15_prod_cr.bin; mts_bootpack mce_mts_d15_prod_cr.bin; bootloader_dtb tegra186-quill-p3310-1000-c03-00-base.dtb; bpmp_fw bpmp.bin; bpmp_fw_dtb tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb; tlk tos-trusty.img; eks eks.img' --cfg flash.xml --bl nvtboot_recovery_cpu.bin --odmdata 0x1090000 --chip 0x18 --applet mb1_recovery_prod.bin --cmd 'burnfuses odmfuse_pkc.xml'
+Welcome to Tegra Flash
+version 1.0.0
+Type ? or help for help and q or quit to exit
+Use ! to execute system commands
+
+[   0.0131 ] Burning fuses
+[   0.0131 ] Generating RCM messages
+[   0.0141 ] tegrarcm_v2 --listrcm rcm_list.xml --chip 0x18 0 --download rcm mb1_recovery_prod.bin 0 0
+[   0.0150 ] RCM 0 is saved as rcm_0.rcm
+[   0.0153 ] RCM 1 is saved as rcm_1.rcm
+[   0.0153 ] List of rcm files are saved in rcm_list.xml
+[   0.0153 ]
+[   0.0154 ] Signing RCM messages
+[   0.0162 ] tegrasign_v2 --key None --list rcm_list.xml --pubkeyhash pub_key.key
+[   0.0170 ] Assuming zero filled SBK key
+[   0.0209 ]
+[   0.0209 ] Copying signature to RCM mesages
+[   0.0218 ] tegrarcm_v2 --chip 0x18 0 --updatesig rcm_list_signed.xml
+[   0.0232 ]
+[   0.0232 ] Boot Rom communication
+[   0.0241 ] tegrarcm_v2 --chip 0x18 0 --rcm rcm_list_signed.xml
+[   0.0249 ] BootRom is not running
+[   5.1439 ]
+[   6.1461 ] tegrarcm_v2 --isapplet
+[   6.1471 ] Applet version 01.00.0000
+[   6.1618 ]
+[   6.1643 ] Parsing fuse info as per xml file
+[   6.1672 ] tegraparser_v2 --fuse_info odmfuse_pkc.xml blow_fuse_data.bin
+[   6.1680 ] MagicId=0x45535546 version=0x1
+[   6.1703 ] node: name=PublicKeyHash size=32
+[   6.1703 ]   value=0xfdd32b8c6256163b888d177fc15707605e55bb8c5c4f0a8aec4209724789c06e
+[   6.1703 ] node: name=BootSecurityInfo size=4
+[   6.1703 ]   value=0x2
+[   6.1703 ] node: name=SecurityMode size=4
+[   6.1703 ]   value=0x1
+[   6.1703 ]
+[   6.1713 ] tegrarcm_v2 --oem burnfuses blow_fuse_data.bin
+[   6.1721 ] Applet version 01.00.0000
+[   6.1942 ] 0000000000000001: Oem commands are not supported
+[   6.1951 ] Fuse burning failed
+[   6.1951 ]
+[   6.1952 ] trying fusing with CPU binary
+[   6.1981 ] tegrasign_v2 --key None --getmode mode.txt
+[   6.1989 ] Assuming zero filled SBK key
+[   6.1990 ]
+[   6.1991 ] Parsing partition layout
+[   6.2000 ] tegraparser_v2 --pt flash.xml.tmp
+[   6.2013 ]
+[   6.2013 ] Creating list of images to be signed
+[   6.2031 ] tegrahost_v2 --chip 0x18 0 --partitionlayout flash.xml.bin --list images_list.xml zerosbk
+[   6.2277 ]
+[   6.2278 ] Generating signatures
+[   6.2288 ] tegrasign_v2 --key None --list images_list.xml --pubkeyhash pub_key.key
+[   6.2296 ] Assuming zero filled SBK key
+[   6.5389 ]
+[   6.5389 ] Generating br-bct
+[   6.5411 ] Updating dev and MSS params in BR BCT
+[   6.5412 ] tegrabct_v2 --dev_param emmc.cfg --sdram P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg --brbct br_bct.cfg --chip 0x18 0
+[   6.5690 ]
+[   6.5690 ] Updating bl info
+[   6.5702 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x18 0 --updateblinfo flash.xml.bin --updatesig images_list_signed.xml
+[   6.5721 ]
+[   6.5721 ] Updating smd info
+[   6.5730 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x18 --updatesmdinfo flash.xml.bin
+[   6.5741 ]
+[   6.5742 ] Updating Odmdata
+[   6.5751 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x18 0 --updatefields Odmdata =0x1090000
+[   6.5762 ]
+[   6.5762 ] Get Signed section of bct
+[   6.5771 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x18 0 --listbct bct_list.xml
+[   6.5784 ]
+[   6.5794 ] tegrasign_v2 --key None --list bct_list.xml --pubkeyhash pub_key.key
+[   6.5803 ] Assuming zero filled SBK key
+[   6.5806 ]
+[   6.5806 ] Updating BCT with signature
+[   6.5815 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x18 0 --updatesig bct_list_signed.xml
+[   6.5825 ]
+[   6.5826 ] Generating coldboot mb1-bct
+[   6.5835 ] tegrabct_v2 --chip 0x18 0 --mb1bct mb1_cold_boot_bct.cfg --sdram P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg --misc tegra186-mb1-bct-misc-si-l4t.cfg --scr mobile_scr.cfg --pinmux tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg --pmc tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg --pmic tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg --brcommand tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg --prod tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg
+[   6.5844 ] MB1-BCT version: 0xf
+[   6.5845 ] Copying Sdram info from 2 to 3 set
+[   6.6036 ] Packing sdram param for instance[0]
+[   6.6040 ] Packing sdram param for instance[1]
+[   6.6044 ] Packing sdram param for instance[2]
+[   6.6047 ] Packing sdram param for instance[3]
+
+[   6.6051 ] Parsing config file :tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg
+[   6.6059 ] Appending platform config data of size :- 3048
+[   6.6063 ]
+[   6.6063 ] Parsing config file :mobile_scr.cfg
+[   6.6063 ] Appending platform config data of size :- 12240
+[   6.6063 ]
+[   6.6063 ] Parsing config file :tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg
+[   6.6063 ] Appending platform config data of size :- 24
+[   6.6063 ]
+[   6.6063 ] Parsing config file :tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg
+[   6.6064 ] Appending platform config data of size :- 648
+[   6.6064 ]
+[   6.6064 ] Parsing config file :tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg
+[   6.6064 ] Appending platform config data of size :- 64
+[   6.6064 ]
+[   6.6064 ] Parsing config file :tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg
+[   6.6064 ] Appending platform config data of size :- 1628
+[   6.6064 ]
+[   6.6065 ] Updating mb1-bct with firmware information
+[   6.6075 ] tegrabct_v2 --chip 0x18 --mb1bct mb1_cold_boot_bct_MB1.bct --updatefwinfo flash.xml.bin
+[   6.6082 ] MB1-BCT version: 0xf
+[   6.6087 ]
+[   6.6087 ] Updating mb1-bct with storage information
+[   6.6095 ] tegrabct_v2 --chip 0x18 --mb1bct mb1_cold_boot_bct_MB1.bct --updatestorageinfo flash.xml.bin
+[   6.6104 ] MB1-BCT version: 0xf
+[   6.6108 ]
+[   6.6118 ] tegrahost_v2 --chip 0x18 --align mb1_cold_boot_bct_MB1.bct
+[   6.6127 ]
+[   6.6135 ] tegrahost_v2 --appendsigheader mb1_cold_boot_bct_MB1.bct zerosbk
+[   6.6144 ]
+[   6.6155 ] tegrasign_v2 --key None --list mb1_cold_boot_bct_MB1_sigheader.bct_list.xml
+[   6.6163 ] Assuming zero filled SBK key
+[   6.6180 ]
+[   6.6193 ] tegrahost_v2 --updatesigheader mb1_cold_boot_bct_MB1_sigheader.bct.encrypt mb1_cold_boot_bct_MB1_sigheader.bct.hash zerosbk
+[   6.6204 ]
+[   6.6205 ] Generating recovery mb1-bct
+[   6.6215 ] tegrabct_v2 --chip 0x18 0 --mb1bct mb1_bct.cfg --sdram P3310_A00_8GB_Samsung_8GB_lpddr4_204Mhz_A02_l4t.cfg --misc tegra186-mb1-bct-misc-si-l4t.cfg --scr minimal_scr.cfg --pinmux tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg --pmc tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg --pmic tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg --brcommand tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg --prod tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg
+[   6.6224 ] MB1-BCT version: 0xf
+[   6.6227 ] Copying Sdram info from 2 to 3 set
+[   6.6417 ] Packing sdram param for instance[0]
+[   6.6421 ] Packing sdram param for instance[1]
+[   6.6425 ] Packing sdram param for instance[2]
+[   6.6429 ] Packing sdram param for instance[3]
+
+[   6.6433 ] Parsing config file :tegra186-mb1-bct-pinmux-quill-p3310-1000-c03.cfg
+[   6.6440 ] Appending platform config data of size :- 3048
+
+[   6.6445 ] Parsing config file :minimal_scr.cfg
+[   6.6447 ] Appending platform config data of size :- 12240
+[   6.6447 ]
+[   6.6447 ] Parsing config file :tegra186-mb1-bct-pad-quill-p3310-1000-c03.cfg
+[   6.6447 ] Appending platform config data of size :- 24
+[   6.6447 ]
+[   6.6447 ] Parsing config file :tegra186-mb1-bct-pmic-quill-p3310-1000-c04.cfg
+[   6.6447 ] Appending platform config data of size :- 648
+[   6.6447 ]
+[   6.6447 ] Parsing config file :tegra186-mb1-bct-bootrom-quill-p3310-1000-c03.cfg
+[   6.6448 ] Appending platform config data of size :- 64
+[   6.6448 ]
+[   6.6448 ] Parsing config file :tegra186-mb1-bct-prod-quill-p3310-1000-c03.cfg
+[   6.6448 ] Appending platform config data of size :- 1628
+[   6.6448 ]
+[   6.6448 ] Updating mb1-bct with firmware information
+[   6.6458 ] tegrabct_v2 --chip 0x18 --mb1bct mb1_bct_MB1.bct --updatefwinfo flash.xml.bin
+[   6.6467 ] MB1-BCT version: 0xf
+[   6.6471 ]
+[   6.6472 ] Updating mb1-bct with storage information
+[   6.6480 ] tegrabct_v2 --chip 0x18 --mb1bct mb1_bct_MB1.bct --updatestorageinfo flash.xml.bin
+[   6.6489 ] MB1-BCT version: 0xf
+[   6.6494 ]
+[   6.6504 ] tegrahost_v2 --chip 0x18 --align mb1_bct_MB1.bct
+[   6.6515 ]
+[   6.6525 ] tegrahost_v2 --appendsigheader mb1_bct_MB1.bct zerosbk
+[   6.6536 ]
+[   6.6549 ] tegrasign_v2 --key None --list mb1_bct_MB1_sigheader.bct_list.xml
+[   6.6560 ] Assuming zero filled SBK key
+[   6.6585 ]
+[   6.6597 ] tegrahost_v2 --updatesigheader mb1_bct_MB1_sigheader.bct.encrypt mb1_bct_MB1_sigheader.bct.hash zerosbk
+[   6.6607 ]
+[   6.6608 ] Copying signatures
+[   6.6617 ] tegrahost_v2 --chip 0x18 0 --partitionlayout flash.xml.bin --updatesig images_list_signed.xml
+[   6.6934 ]
+[   6.6934 ] Sending BCTs
+[   6.6945 ] tegrarcm_v2 --download bct_bootrom br_bct_BR.bct --download bct_mb1 mb1_bct_MB1_sigheader.bct.encrypt
+[   6.6953 ] Applet version 01.00.0000
+[   6.7101 ] Sending bct_bootrom
+[   6.7102 ] [................................................] 100%
+[   6.7116 ] Sending bct_mb1
+[   6.7126 ] [................................................] 100%
+[   6.7287 ]
+[   6.7287 ] Generating blob
+[   6.7299 ] tegrahost_v2 --chip 0x18 --align blob_nvtboot_recovery_cpu.bin
+[   6.7310 ]
+[   6.7319 ] tegrahost_v2 --appendsigheader blob_nvtboot_recovery_cpu.bin zerosbk
+[   6.7332 ]
+[   6.7344 ] tegrasign_v2 --key None --list blob_nvtboot_recovery_cpu_sigheader.bin_list.xml
+[   6.7353 ] Assuming zero filled SBK key
+[   6.7419 ]
+[   6.7433 ] tegrahost_v2 --updatesigheader blob_nvtboot_recovery_cpu_sigheader.bin.encrypt blob_nvtboot_recovery_cpu_sigheader.bin.hash zerosbk
+[   6.7445 ]
+[   6.7455 ] tegrahost_v2 --chip 0x18 --align blob_nvtboot_recovery.bin
+[   6.7464 ]
+[   6.7473 ] tegrahost_v2 --appendsigheader blob_nvtboot_recovery.bin zerosbk
+[   6.7483 ]
+[   6.7494 ] tegrasign_v2 --key None --list blob_nvtboot_recovery_sigheader.bin_list.xml
+[   6.7502 ] Assuming zero filled SBK key
+[   6.7533 ]
+[   6.7545 ] tegrahost_v2 --updatesigheader blob_nvtboot_recovery_sigheader.bin.encrypt blob_nvtboot_recovery_sigheader.bin.hash zerosbk
+[   6.7556 ]
+[   6.7566 ] tegrahost_v2 --chip 0x18 --align blob_preboot_d15_prod_cr.bin
+[   6.7574 ]
+[   6.7583 ] tegrahost_v2 --appendsigheader blob_preboot_d15_prod_cr.bin zerosbk
+[   6.7594 ]
+[   6.7606 ] tegrasign_v2 --key None --list blob_preboot_d15_prod_cr_sigheader.bin_list.xml
+[   6.7614 ] Assuming zero filled SBK key
+[   6.7636 ]
+[   6.7650 ] tegrahost_v2 --updatesigheader blob_preboot_d15_prod_cr_sigheader.bin.encrypt blob_preboot_d15_prod_cr_sigheader.bin.hash zerosbk
+[   6.7661 ]
+[   6.7671 ] tegrahost_v2 --chip 0x18 --align blob_mce_mts_d15_prod_cr.bin
+[   6.7681 ]
+[   6.7690 ] tegrahost_v2 --appendsigheader blob_mce_mts_d15_prod_cr.bin zerosbk
+[   6.7735 ]
+[   6.7749 ] tegrasign_v2 --key None --list blob_mce_mts_d15_prod_cr_sigheader.bin_list.xml
+[   6.7757 ] Assuming zero filled SBK key
+[   6.8398 ]
+[   6.8412 ] tegrahost_v2 --updatesigheader blob_mce_mts_d15_prod_cr_sigheader.bin.encrypt blob_mce_mts_d15_prod_cr_sigheader.bin.hash zerosbk
+[   6.8451 ]
+[   6.8463 ] tegrahost_v2 --chip 0x18 --align blob_tegra186-quill-p3310-1000-c03-00-base.dtb
+[   6.8472 ]
+[   6.8483 ] tegrahost_v2 --appendsigheader blob_tegra186-quill-p3310-1000-c03-00-base.dtb zerosbk
+[   6.8498 ]
+[   6.8510 ] tegrasign_v2 --key None --list blob_tegra186-quill-p3310-1000-c03-00-base_sigheader.dtb_list.xml
+[   6.8519 ] Assuming zero filled SBK key
+[   6.8628 ]
+[   6.8641 ] tegrahost_v2 --updatesigheader blob_tegra186-quill-p3310-1000-c03-00-base_sigheader.dtb.encrypt blob_tegra186-quill-p3310-1000-c03-00-base_sigheader.dtb.hash zerosbk
+[   6.8655 ]
+[   6.8665 ] tegrahost_v2 --chip 0x18 --align blob_bpmp.bin
+[   6.8674 ]
+[   6.8682 ] tegrahost_v2 --appendsigheader blob_bpmp.bin zerosbk
+[   6.8701 ]
+[   6.8714 ] tegrasign_v2 --key None --list blob_bpmp_sigheader.bin_list.xml
+[   6.8724 ] Assuming zero filled SBK key
+[   6.8891 ]
+[   6.8905 ] tegrahost_v2 --updatesigheader blob_bpmp_sigheader.bin.encrypt blob_bpmp_sigheader.bin.hash zerosbk
+[   6.8922 ]
+[   6.8932 ] tegrahost_v2 --chip 0x18 --align blob_tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb
+[   6.8940 ]
+[   6.8949 ] tegrahost_v2 --appendsigheader blob_tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2.dtb zerosbk
+[   6.8966 ]
+[   6.8977 ] tegrasign_v2 --key None --list blob_tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2_sigheader.dtb_list.xml
+[   6.8985 ] Assuming zero filled SBK key
+[   6.9131 ]
+[   6.9146 ] tegrahost_v2 --updatesigheader blob_tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2_sigheader.dtb.encrypt blob_tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2_sigheader.dtb.hash zerosbk
+[   6.9161 ]
+[   6.9171 ] tegrahost_v2 --chip 0x18 --align blob_tos-trusty.img
+[   6.9180 ]
+[   6.9190 ] tegrahost_v2 --appendsigheader blob_tos-trusty.img zerosbk
+[   6.9206 ]
+[   6.9218 ] tegrasign_v2 --key None --list blob_tos-trusty_sigheader.img_list.xml
+[   6.9226 ] Assuming zero filled SBK key
+[   6.9326 ]
+[   6.9340 ] tegrahost_v2 --updatesigheader blob_tos-trusty_sigheader.img.encrypt blob_tos-trusty_sigheader.img.hash zerosbk
+[   6.9354 ]
+[   6.9368 ] tegrahost_v2 --chip 0x18 --align blob_eks.img
+[   6.9377 ]
+[   6.9386 ] tegrahost_v2 --appendsigheader blob_eks.img zerosbk
+[   6.9396 ]
+[   6.9408 ] tegrasign_v2 --key None --list blob_eks_sigheader.img_list.xml
+[   6.9416 ] Assuming zero filled SBK key
+[   6.9418 ]
+[   6.9430 ] tegrahost_v2 --updatesigheader blob_eks_sigheader.img.encrypt blob_eks_sigheader.img.hash zerosbk
+[   6.9440 ]
+[   6.9451 ] tegrahost_v2 --chip 0x18 --generateblob blob.xml blob.bin
+[   6.9458 ] number of images in blob are 9
+[   6.9462 ] blobsize is 4097240
+[   6.9464 ] Added binary blob_nvtboot_recovery_cpu_sigheader.bin.encrypt of size 203312
+[   6.9486 ] Added binary blob_nvtboot_recovery_sigheader.bin.encrypt of size 89360
+[   6.9490 ] Added binary blob_preboot_d15_prod_cr_sigheader.bin.encrypt of size 63104
+[   6.9497 ] Added binary blob_mce_mts_d15_prod_cr_sigheader.bin.encrypt of size 2082144
+[   6.9504 ] Added binary blob_tegra186-quill-p3310-1000-c03-00-base_sigheader.dtb.encrypt of size 344432
+[   6.9510 ] Added binary blob_bpmp_sigheader.bin.encrypt of size 533904
+[   6.9514 ] Added binary blob_tegra186-a02-bpmp-quill-p3310-1000-c04-00-te770d-ucm2_sigheader.dtb.encrypt of size 466240
+[   6.9520 ] Added binary blob_tos-trusty_sigheader.img.encrypt of size 313152
+[   6.9524 ] Added binary blob_eks_sigheader.img.encrypt of size 1440
+[   6.9540 ]
+[   6.9541 ] Sending bootloader and pre-requisite binaries
+[   6.9551 ] tegrarcm_v2 --download blob blob.bin
+[   6.9559 ] Applet version 01.00.0000
+[   6.9745 ] Sending blob
+[   6.9746 ] [................................................] 100%
+[   7.4145 ]
+[   7.4155 ] tegrarcm_v2 --boot recovery
+[   7.4164 ] Applet version 01.00.0000
+[   7.4354 ]
+[   8.4378 ] tegrarcm_v2 --isapplet
+[   8.4522 ]
+[   8.4537 ] tegradevflash_v2 --iscpubl
+[   8.4549 ] CPU Bootloader is not running on device.
+[   8.4681 ]
+[   9.4705 ] tegrarcm_v2 --isapplet
+[   9.4855 ]
+[   9.4870 ] tegradevflash_v2 --iscpubl
+[   9.4879 ] Bootloader version 01.00.0000
+[   9.5054 ] Bootloader version 01.00.0000
+[   9.5068 ]
+[   9.5068 ] tegradevflash_v2 --oem burnfuses blow_fuse_data.bin
+[   9.5078 ] Bootloader version 01.00.0000
+[   9.5257 ] Fusing burning successful
+[   9.6539 ]
+[   9.6550 ] tegradevflash_v2 --reboot recovery
+[   9.6561 ] Bootloader version 01.00.0000
+[   9.6622 ]
++ '[' 0 -ne 0 ']'
++ echo '*** The fuse configuration is saved in bootloader/odmfuse_pkc.xml'
+*** The fuse configuration is saved in bootloader/odmfuse_pkc.xml
++ '[' PKC = NS ']'
++ echo '*** The ODM fuse has been secured with PKC keys.'
+*** The ODM fuse has been secured with PKC keys.
++ echo '*** Flash "signed BCT and bootloader(s)".'
+*** Flash "signed BCT and bootloader(s)".
++ popd
++ echo '*** done.'
+*** done.
++ exit 0
+dan@dan-ubuntu:~/secureboot-tegra$

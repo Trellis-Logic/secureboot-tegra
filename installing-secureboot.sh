@@ -5,5 +5,3 @@ cd `dirname $0`
 source ./downloadfilenames
 sudo tar xvjf ${SECUREBOOT_PACKAGE}
 cd Linux_for_Tegra
-# See https://github.com/madisongh/meta-tegra/issues/193
-patch -p0 < ../fix-uid-check-in-odmfuse.patch

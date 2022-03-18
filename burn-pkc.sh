@@ -14,6 +14,6 @@ then
     set -e
     echo "Burning PKC fuse, leaving JTAG enabled"
     cd Linux_for_Tegra
-    echo sudo ./odmfuse.sh -j -i 0x18 -c PKC -p -k ../${keyfile} jetson-tx2
-    sudo ./odmfuse.sh -j -i 0x18 -c PKC -p -k ../${keyfile} jetson-tx2
+    echo sudo ./odmfuse.sh -i 0x19 -c PKC -p -k ../${keyfile} jetson-agx-xavier-devkit
+    sudo ./odmfuse.sh -i 0x19 -c PKC -p -k ../${keyfile} jetson-agx-xavier-devkit
 fi

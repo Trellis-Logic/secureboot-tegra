@@ -1,5 +1,5 @@
 #!/bin/bash
-# See instructions at https://docs.nvidia.com/jetson/l4t/index.html#page/Tegra%2520Linux%2520Driver%2520Package%2520Development%2520Guide%2Fquick_start.html%23wwpID0E0RD0HA
+# See instructions at https://docs.nvidia.com/jetson/l4t/index.html#page/Tegra%20Linux%20Driver%20Package%20Development%20Guide/quick_start.html#wwpID0E0RD0HA
 set -e
 cd `dirname $0`
 source ./downloadfilenames

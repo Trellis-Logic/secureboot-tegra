@@ -1,9 +1,7 @@
 This project contains a set of scripts to automate the secure boot process outlined
 in the [Nvidia L4T Development Guide](https://docs.nvidia.com/jetson/l4t/index.html#page/Tegra%2520Linux%2520Driver%2520Package%2520Development%2520Guide%2Fsecurity.html%23)
 
-The scripts are currently hard-coded to use Jetson TX2 as the target.
-
-The scripts contain a patch provided by Matt Madison (see [this link](https://github.com/madisongh/meta-tegra/issues/193)) which fixes fuse programming steps on Jetson TX2.
+The scripts are currently hard-coded to use Jetson AGX Xavier as the target.
 
 # Downloading Packages and preparing for use
 Run
@@ -49,3 +47,4 @@ Run
 ./bootloader-flash-signed.sh
 ```
 To write signed images to the part
+

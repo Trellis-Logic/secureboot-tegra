@@ -1,6 +1,6 @@
 #!/bin/bash
-# See "Burning PKC Fuses" instructions at
-# https://docs.nvidia.com/jetson/l4t/index.html#page/Tegra%2520Linux%2520Driver%2520Package%2520Development%2520Guide%2Fbootloader_secure_boot.html%23wwpID0E0LG0HA
+# See "Burning PKC [DK(KEK), SBK] Fuses" instructions at
+# https://docs.nvidia.com/jetson/l4t/index.html#page/Tegra%20Linux%20Driver%20Package%20Development%20Guide/bootloader_secure_boot.html#wwpID0E0QF0HA
 cd `dirname $0`
 keyfile=rsa_priv.pem
 if [ ! -e ${keyfile} ]; then

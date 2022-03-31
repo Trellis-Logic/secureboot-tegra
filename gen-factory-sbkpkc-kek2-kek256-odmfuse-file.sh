@@ -35,10 +35,14 @@ then
     set -e
     echo "Generating factory fuseblob.tbz2 with SBK, PKC, KEK2 and KEK256 fuses, leaving JTAG enabled"
     cd Linux_for_Tegra
+    if  ! command -v ./odmfuse.sh ; then
+	    echo "Please run ./install-secureboot.sh before running this script"
+	    exit 1
+    fi
     # Odmfuse requires variable FAB, BOARDID, BOARDSKU and BOARDREV in order to run in the offline mode.
     # Otherwise odmfuse needs to access on board EEPROM. Make sure the board is in recovery mode.
     # Board ID(2888) version(400) sku(0001) revision(L.0)
     # As the board is unfused, the --auth mode is NS in order to generate all the fuses.
-    echo sudo FAB=${FAB} BOARDID=${BOARDID}  BOARDSKU=${BOARDSKU}  BOARDREV=${BOARDREV} ./odmfuse.sh -i ${chipid} -p --noburn --auth SBKPKC -k ../${keyfile} --KEK2 ../${kek2file} --KEK256 ../${kek256file} -S ../${sbkfile} ${TargetBoard}
+    echo sudo FAB=${FAB} BOARDID=${BOARDID}  BOARDSKU=${BOARDSKU}  BOARDREV=${BOARDREV} ./odmfuse.sh -i ${chipid} -p --noburn --auth NS -k ../${keyfile} --KEK2 ../${kek2file} --KEK256 ../${kek256file} -S ../${sbkfile} ${TargetBoard}
     sudo FAB=${FAB} BOARDID=${BOARDID}  BOARDSKU=${BOARDSKU}  BOARDREV=${BOARDREV} ./odmfuse.sh -i ${chipid} -p --noburn --auth NS -k ../${keyfile} --KEK2 ../${kek2file} --KEK256 ../${kek256file} -S ../${sbkfile} ${TargetBoard}
 fi
